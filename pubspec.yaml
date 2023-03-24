@@ -1,0 +1,38 @@
+name: flutter_trust_wallet_core
+description: A Flutter plugin for trust wallet core
+version: 0.0.2
+homepage: https://github.com/weishirongzhen/flutter_trust_wallet_core
+
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: ^2.0.1
+  protobuf: ^2.1.0
+  fixnum: ^1.0.1
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  # This section identifies this Flutter project as a plugin project.
+  # The 'pluginClass' and Android 'package' identifiers should not ordinarily
+  # be modified. They are used by the tooling to maintain consistency when
+  # adding or updating assets for this project.
+  plugin:
+    platforms:
+      android:
+        package: com.memtopia.flutter_trust_wallet_core
+        pluginClass: FlutterTrustWalletCorePlugin
+      ios:
+        pluginClass: FlutterTrustWalletCorePlugin

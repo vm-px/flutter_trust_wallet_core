@@ -1,0 +1,5 @@
+*.aar filter=lfs diff=lfs merge=lfs -text
+ios/Frameworks/WalletCore.xcframework/ios-arm64/WalletCore.framework/WalletCore filter=lfs diff=lfs merge=lfs -text
+ios/Frameworks/WalletCore.xcframework/ios-arm64_x86_64-simulator/WalletCore.framework/WalletCore filter=lfs diff=lfs merge=lfs -text
+ios/Frameworks/SwiftProtobuf.xcframework/ios-arm64/SwiftProtobuf.framework/SwiftProtobuf filter=lfs diff=lfs merge=lfs -text
+ios/Frameworks/SwiftProtobuf.xcframework/ios-arm64_x86_64-simulator/SwiftProtobuf.framework/SwiftProtobuf filter=lfs diff=lfs merge=lfs -text
