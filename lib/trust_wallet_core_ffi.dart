@@ -51,6 +51,8 @@ part 'ffi_impl/tw_ethereum_abi_function.dart';
 
 part 'ffi_impl/tw_ethereum_abi_value.dart';
 
+part 'ffi_impl/tw_ethereum_message_signer.dart';
+
 part 'ffi_impl/tw_ethereum_chain_id.dart';
 
 part 'ffi_impl/tw_fio_account.dart';
@@ -146,6 +148,8 @@ part 'dart_impl/tw_fio_account_impl.dart';
 part 'dart_impl/tw_ethereum_abi_impl.dart';
 
 part 'dart_impl/tw_ethereum_abi_value_impl.dart';
+
+part 'dart_impl/tw_ethereum_message_signer_impl.dart';
 
 part 'dart_impl/tw_coin_type_configuration_impl.dart';
 

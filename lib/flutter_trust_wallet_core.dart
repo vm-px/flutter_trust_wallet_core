@@ -16,6 +16,7 @@ part 'core/coin_type_configuration.dart';
 part 'core/ethereum_abi.dart';
 part 'core/ethereum_abi_function.dart';
 part 'core/ethereum_abi_value.dart';
+part 'core/ethereum_message_signer.dart';
 part 'core/fio_account.dart';
 part 'core/groestlcoin_address.dart';
 part 'core/hash.dart';
