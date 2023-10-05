@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Represents a Nervos address.
 abstract class TWNervosAddress {
@@ -17,8 +17,11 @@ abstract class TWNervosAddress {
     );
   }
 
-  static late final _TWNervosAddressEqual_ptr = _lookup<NativeFunction<_c_TWNervosAddressEqual>>('TWNervosAddressEqual');
-  static late final _dart_TWNervosAddressEqual _TWNervosAddressEqual = _TWNervosAddressEqual_ptr.asFunction<_dart_TWNervosAddressEqual>();
+  static final _TWNervosAddressEqual_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Void>, Pointer<Void>)>>(
+          'TWNervosAddressEqual');
+  static final _dart_TWNervosAddressEqual _TWNervosAddressEqual =
+      _TWNervosAddressEqual_ptr.asFunction<_dart_TWNervosAddressEqual>();
 
   /// Determines if the string is a valid Nervos address.
   ///
@@ -32,8 +35,13 @@ abstract class TWNervosAddress {
     );
   }
 
-  static late final _TWNervosAddressIsValidString_ptr = _lookup<NativeFunction<_c_TWNervosAddressIsValidString>>('TWNervosAddressIsValidString');
-  static late final _dart_TWNervosAddressIsValidString _TWNervosAddressIsValidString = _TWNervosAddressIsValidString_ptr.asFunction<_dart_TWNervosAddressIsValidString>();
+  static final _TWNervosAddressIsValidString_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Utf8>)>>(
+    'TWNervosAddressIsValidString',
+  );
+  static final _dart_TWNervosAddressIsValidString
+      _TWNervosAddressIsValidString = _TWNervosAddressIsValidString_ptr
+          .asFunction<_dart_TWNervosAddressIsValidString>();
 
   /// Initializes an address from a sring representaion.
   ///
@@ -47,9 +55,13 @@ abstract class TWNervosAddress {
     );
   }
 
-  static late final _TWNervosAddressCreateWithString_ptr = _lookup<NativeFunction<_c_TWNervosAddressCreateWithString>>('TWNervosAddressCreateWithString');
-  static late final _dart_TWNervosAddressCreateWithString _TWNervosAddressCreateWithString =
-      _TWNervosAddressCreateWithString_ptr.asFunction<_dart_TWNervosAddressCreateWithString>();
+  static final _TWNervosAddressCreateWithString_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Utf8>)>>(
+    'TWNervosAddressCreateWithString',
+  );
+  static final _dart_TWNervosAddressCreateWithString
+      _TWNervosAddressCreateWithString = _TWNervosAddressCreateWithString_ptr
+          .asFunction<_dart_TWNervosAddressCreateWithString>();
 
   /// Deletes a Nervos address.
   ///
@@ -62,8 +74,12 @@ abstract class TWNervosAddress {
     );
   }
 
-  late final _TWNervosAddressDelete_ptr = _lookup<NativeFunction<_c_TWNervosAddressDelete>>('TWNervosAddressDelete');
-  late final _dart_TWNervosAddressDelete _TWNervosAddressDelete = _TWNervosAddressDelete_ptr.asFunction<_dart_TWNervosAddressDelete>();
+  late final _TWNervosAddressDelete_ptr =
+      lookup<NativeFunction<Void Function(Pointer<Void>)>>(
+    'TWNervosAddressDelete',
+  );
+  late final _dart_TWNervosAddressDelete _TWNervosAddressDelete =
+      _TWNervosAddressDelete_ptr.asFunction<_dart_TWNervosAddressDelete>();
 
   /// Returns the address string representation.
   ///
@@ -76,8 +92,13 @@ abstract class TWNervosAddress {
     );
   }
 
-  late final _TWNervosAddressDescription_ptr = _lookup<NativeFunction<_c_TWNervosAddressDescription>>('TWNervosAddressDescription');
-  late final _dart_TWNervosAddressDescription _TWNervosAddressDescription = _TWNervosAddressDescription_ptr.asFunction<_dart_TWNervosAddressDescription>();
+  late final _TWNervosAddressDescription_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+    'TWNervosAddressDescription',
+  );
+  late final _dart_TWNervosAddressDescription _TWNervosAddressDescription =
+      _TWNervosAddressDescription_ptr.asFunction<
+          _dart_TWNervosAddressDescription>();
 
   /// Returns the Code hash
   ///
@@ -90,8 +111,12 @@ abstract class TWNervosAddress {
     );
   }
 
-  late final _TWNervosAddressCodeHash_ptr = _lookup<NativeFunction<_c_TWNervosAddressCodeHash>>('TWNervosAddressCodeHash');
-  late final _dart_TWNervosAddressCodeHash _TWNervosAddressCodeHash = _TWNervosAddressCodeHash_ptr.asFunction<_dart_TWNervosAddressCodeHash>();
+  late final _TWNervosAddressCodeHash_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>)>>(
+    'TWNervosAddressCodeHash',
+  );
+  late final _dart_TWNervosAddressCodeHash _TWNervosAddressCodeHash =
+      _TWNervosAddressCodeHash_ptr.asFunction<_dart_TWNervosAddressCodeHash>();
 
   /// Returns the address hash type
   ///
@@ -104,8 +129,12 @@ abstract class TWNervosAddress {
     );
   }
 
-  late final _TWNervosAddressHashType_ptr = _lookup<NativeFunction<_c_TWNervosAddressHashType>>('TWNervosAddressHashType');
-  late final _dart_TWNervosAddressHashType _TWNervosAddressHashType = _TWNervosAddressHashType_ptr.asFunction<_dart_TWNervosAddressHashType>();
+  late final _TWNervosAddressHashType_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+    'TWNervosAddressHashType',
+  );
+  late final _dart_TWNervosAddressHashType _TWNervosAddressHashType =
+      _TWNervosAddressHashType_ptr.asFunction<_dart_TWNervosAddressHashType>();
 
   /// Returns the address args data.
   ///
@@ -118,29 +147,19 @@ abstract class TWNervosAddress {
     );
   }
 
-  late final _TWNervosAddressArgs_ptr = _lookup<NativeFunction<_c_TWNervosAddressArgs>>('TWNervosAddressArgs');
-  late final _dart_TWNervosAddressArgs _TWNervosAddressArgs = _TWNervosAddressArgs_ptr.asFunction<_dart_TWNervosAddressArgs>();
+  late final _TWNervosAddressArgs_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>)>>(
+          'TWNervosAddressArgs');
+  late final _dart_TWNervosAddressArgs _TWNervosAddressArgs =
+      _TWNervosAddressArgs_ptr.asFunction<_dart_TWNervosAddressArgs>();
 }
-
-typedef _c_TWNervosAddressEqual = Int32 Function(
-  Pointer<Void> lhs,
-  Pointer<Void> rhs,
-);
 
 typedef _dart_TWNervosAddressEqual = int Function(
   Pointer<Void> lhs,
   Pointer<Void> rhs,
 );
 
-typedef _c_TWNervosAddressIsValidString = Int32 Function(
-  Pointer<Utf8> string,
-);
-
 typedef _dart_TWNervosAddressIsValidString = int Function(
-  Pointer<Utf8> string,
-);
-
-typedef _c_TWNervosAddressCreateWithString = Pointer<Void> Function(
   Pointer<Utf8> string,
 );
 
@@ -148,15 +167,7 @@ typedef _dart_TWNervosAddressCreateWithString = Pointer<Void> Function(
   Pointer<Utf8> string,
 );
 
-typedef _c_TWNervosAddressDelete = Void Function(
-  Pointer<Void> address,
-);
-
 typedef _dart_TWNervosAddressDelete = void Function(
-  Pointer<Void> address,
-);
-
-typedef _c_TWNervosAddressDescription = Pointer<Utf8> Function(
   Pointer<Void> address,
 );
 
@@ -164,23 +175,11 @@ typedef _dart_TWNervosAddressDescription = Pointer<Utf8> Function(
   Pointer<Void> address,
 );
 
-typedef _c_TWNervosAddressCodeHash = Pointer<Void> Function(
-  Pointer<Void> address,
-);
-
 typedef _dart_TWNervosAddressCodeHash = Pointer<Void> Function(
   Pointer<Void> address,
 );
 
-typedef _c_TWNervosAddressHashType = Pointer<Utf8> Function(
-  Pointer<Void> address,
-);
-
 typedef _dart_TWNervosAddressHashType = Pointer<Utf8> Function(
-  Pointer<Void> address,
-);
-
-typedef _c_TWNervosAddressArgs = Pointer<Void> Function(
   Pointer<Void> address,
 );
 

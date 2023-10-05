@@ -1,16 +1,21 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class SegwitAddress {
   static late Pointer<Void> _pointer;
 
   SegwitAddress.createWithString(String address) {
     _pointer = TWSegwitAddressImpl.createWithString(address);
-    if (_pointer.hashCode == 0) throw Exception(["SegwitAddress nativehandle is null"]);
+    if (_pointer.hashCode == 0) {
+      throw Exception(['SegwitAddress nativehandle is null']);
+    }
   }
 
   SegwitAddress.createWithPublicKey(int hrp, PublicKey publicKey) {
-    _pointer = TWSegwitAddressImpl.createWithPublicKey(hrp, publicKey._nativehandle);
-    if (_pointer.hashCode == 0) throw Exception(["SegwitAddress nativehandle is null"]);
+    _pointer = TWSegwitAddressImpl.createWithPublicKey(hrp, publicKey.pointer);
+
+    if (_pointer.hashCode == 0) {
+      throw Exception(['SegwitAddress nativehandle is null']);
+    }
   }
 
   static bool equal() {

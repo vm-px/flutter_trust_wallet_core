@@ -1,5 +1,3 @@
-part of trust_wallet_core_ffi;
-
 class TWStellarVersionByte {
   static const int TWStellarVersionByteAccountID = 0x30; // G
   static const int TWStellarVersionByteSeed = 0xc0; // S

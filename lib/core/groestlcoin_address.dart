@@ -1,21 +1,29 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class GroestlcoinAddress {
   static late Pointer<Void> _pointer;
 
   GroestlcoinAddress.createWithString(String address) {
     _pointer = TWGroestlcoinAddressImpl.createWithString(address);
-    if (_pointer.hashCode == 0) throw Exception(["GroestlcoinAddress nativehandle is null"]);
+
+    if (_pointer.hashCode == 0) {
+      throw Exception(['GroestlcoinAddress nativehandle is null']);
+    }
   }
 
   GroestlcoinAddress.createWithPublicKey(PublicKey publicKey, int prefix) {
-    _pointer = TWGroestlcoinAddressImpl.createWithPublicKey(publicKey._nativehandle, prefix);
-    if (_pointer.hashCode == 0) throw Exception(["GroestlcoinAddress nativehandle is null"]);
+    _pointer = TWGroestlcoinAddressImpl.createWithPublicKey(
+      publicKey.pointer,
+      prefix,
+    );
+
+    if (_pointer.hashCode == 0) {
+      throw Exception(['GroestlcoinAddress nativehandle is null']);
+    }
   }
 
   static bool equal() {
-    final result = TWGroestlcoinAddressImpl.equal(_pointer, _pointer);
-    return result;
+    return TWGroestlcoinAddressImpl.equal(_pointer, _pointer);
   }
 
   static bool isValidString(String string) {

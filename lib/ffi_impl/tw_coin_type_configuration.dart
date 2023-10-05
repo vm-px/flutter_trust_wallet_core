@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// CoinTypeConfiguration functions
 abstract class TWCoinTypeConfiguration {
@@ -15,9 +15,13 @@ abstract class TWCoinTypeConfiguration {
     );
   }
 
-  static late final _TWCoinTypeConfigurationGetSymbol_ptr = _lookup<NativeFunction<_c_TWCoinTypeConfigurationGetSymbol>>('TWCoinTypeConfigurationGetSymbol');
-  static late final _dart_TWCoinTypeConfigurationGetSymbol _TWCoinTypeConfigurationGetSymbol =
-      _TWCoinTypeConfigurationGetSymbol_ptr.asFunction<_dart_TWCoinTypeConfigurationGetSymbol>();
+  static final _TWCoinTypeConfigurationGetSymbol_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Int32)>>(
+    'TWCoinTypeConfigurationGetSymbol',
+  );
+  static final _dart_TWCoinTypeConfigurationGetSymbol
+      _TWCoinTypeConfigurationGetSymbol = _TWCoinTypeConfigurationGetSymbol_ptr
+          .asFunction<_dart_TWCoinTypeConfigurationGetSymbol>();
 
   /// Returns max count decimal places for minimal coin unit
   ///
@@ -31,9 +35,14 @@ abstract class TWCoinTypeConfiguration {
     );
   }
 
-  static late final _TWCoinTypeConfigurationGetDecimals_ptr = _lookup<NativeFunction<_c_TWCoinTypeConfigurationGetDecimals>>('TWCoinTypeConfigurationGetDecimals');
-  static late final _dart_TWCoinTypeConfigurationGetDecimals _TWCoinTypeConfigurationGetDecimals =
-      _TWCoinTypeConfigurationGetDecimals_ptr.asFunction<_dart_TWCoinTypeConfigurationGetDecimals>();
+  static final _TWCoinTypeConfigurationGetDecimals_ptr =
+      lookup<NativeFunction<Int32 Function(Int32)>>(
+    'TWCoinTypeConfigurationGetDecimals',
+  );
+  static final _dart_TWCoinTypeConfigurationGetDecimals
+      _TWCoinTypeConfigurationGetDecimals =
+      _TWCoinTypeConfigurationGetDecimals_ptr.asFunction<
+          _dart_TWCoinTypeConfigurationGetDecimals>();
 
   /// Returns transaction url in blockchain explorer
   ///
@@ -50,10 +59,14 @@ abstract class TWCoinTypeConfiguration {
     );
   }
 
-  static late final _TWCoinTypeConfigurationGetTransactionURL_ptr =
-      _lookup<NativeFunction<_c_TWCoinTypeConfigurationGetTransactionURL>>('TWCoinTypeConfigurationGetTransactionURL');
-  static late final _dart_TWCoinTypeConfigurationGetTransactionURL _TWCoinTypeConfigurationGetTransactionURL =
-      _TWCoinTypeConfigurationGetTransactionURL_ptr.asFunction<_dart_TWCoinTypeConfigurationGetTransactionURL>();
+  static final _TWCoinTypeConfigurationGetTransactionURL_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Int32, Pointer<Utf8>)>>(
+    'TWCoinTypeConfigurationGetTransactionURL',
+  );
+  static final _dart_TWCoinTypeConfigurationGetTransactionURL
+      _TWCoinTypeConfigurationGetTransactionURL =
+      _TWCoinTypeConfigurationGetTransactionURL_ptr.asFunction<
+          _dart_TWCoinTypeConfigurationGetTransactionURL>();
 
   /// Returns account url in blockchain explorer
   ///
@@ -70,9 +83,14 @@ abstract class TWCoinTypeConfiguration {
     );
   }
 
-  static late final _TWCoinTypeConfigurationGetAccountURL_ptr = _lookup<NativeFunction<_c_TWCoinTypeConfigurationGetAccountURL>>('TWCoinTypeConfigurationGetAccountURL');
-  static late final _dart_TWCoinTypeConfigurationGetAccountURL _TWCoinTypeConfigurationGetAccountURL =
-      _TWCoinTypeConfigurationGetAccountURL_ptr.asFunction<_dart_TWCoinTypeConfigurationGetAccountURL>();
+  static final _TWCoinTypeConfigurationGetAccountURL_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Int32, Pointer<Utf8>)>>(
+    'TWCoinTypeConfigurationGetAccountURL',
+  );
+  static final _dart_TWCoinTypeConfigurationGetAccountURL
+      _TWCoinTypeConfigurationGetAccountURL =
+      _TWCoinTypeConfigurationGetAccountURL_ptr.asFunction<
+          _dart_TWCoinTypeConfigurationGetAccountURL>();
 
   /// Returns full name of coin in lower case
   ///
@@ -86,8 +104,13 @@ abstract class TWCoinTypeConfiguration {
     );
   }
 
-  static late final _TWCoinTypeConfigurationGetID_ptr = _lookup<NativeFunction<_c_TWCoinTypeConfigurationGetID>>('TWCoinTypeConfigurationGetID');
-  static late final _dart_TWCoinTypeConfigurationGetID _TWCoinTypeConfigurationGetID = _TWCoinTypeConfigurationGetID_ptr.asFunction<_dart_TWCoinTypeConfigurationGetID>();
+  static final _TWCoinTypeConfigurationGetID_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Int32)>>(
+    'TWCoinTypeConfigurationGetID',
+  );
+  static final _dart_TWCoinTypeConfigurationGetID
+      _TWCoinTypeConfigurationGetID = _TWCoinTypeConfigurationGetID_ptr
+          .asFunction<_dart_TWCoinTypeConfigurationGetID>();
 
   /// Returns full name of coin
   ///
@@ -101,29 +124,21 @@ abstract class TWCoinTypeConfiguration {
     );
   }
 
-  static late final _TWCoinTypeConfigurationGetName_ptr = _lookup<NativeFunction<_c_TWCoinTypeConfigurationGetName>>('TWCoinTypeConfigurationGetName');
-  static late final _dart_TWCoinTypeConfigurationGetName _TWCoinTypeConfigurationGetName = _TWCoinTypeConfigurationGetName_ptr.asFunction<_dart_TWCoinTypeConfigurationGetName>();
+  static final _TWCoinTypeConfigurationGetName_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Int32)>>(
+    'TWCoinTypeConfigurationGetName',
+  );
+  static final _dart_TWCoinTypeConfigurationGetName
+      _TWCoinTypeConfigurationGetName = _TWCoinTypeConfigurationGetName_ptr
+          .asFunction<_dart_TWCoinTypeConfigurationGetName>();
 }
-
-typedef _c_TWCoinTypeConfigurationGetSymbol = Pointer<Utf8> Function(
-  Int32 type,
-);
 
 typedef _dart_TWCoinTypeConfigurationGetSymbol = Pointer<Utf8> Function(
   int type,
 );
 
-typedef _c_TWCoinTypeConfigurationGetDecimals = Int32 Function(
-  Int32 type,
-);
-
 typedef _dart_TWCoinTypeConfigurationGetDecimals = int Function(
   int type,
-);
-
-typedef _c_TWCoinTypeConfigurationGetTransactionURL = Pointer<Utf8> Function(
-  Int32 type,
-  Pointer<Utf8> transactionID,
 );
 
 typedef _dart_TWCoinTypeConfigurationGetTransactionURL = Pointer<Utf8> Function(
@@ -131,26 +146,13 @@ typedef _dart_TWCoinTypeConfigurationGetTransactionURL = Pointer<Utf8> Function(
   Pointer<Utf8> transactionID,
 );
 
-typedef _c_TWCoinTypeConfigurationGetAccountURL = Pointer<Utf8> Function(
-  Int32 type,
-  Pointer<Utf8> accountID,
-);
-
 typedef _dart_TWCoinTypeConfigurationGetAccountURL = Pointer<Utf8> Function(
   int type,
   Pointer<Utf8> accountID,
 );
 
-typedef _c_TWCoinTypeConfigurationGetID = Pointer<Utf8> Function(
-  Int32 type,
-);
-
 typedef _dart_TWCoinTypeConfigurationGetID = Pointer<Utf8> Function(
   int type,
-);
-
-typedef _c_TWCoinTypeConfigurationGetName = Pointer<Utf8> Function(
-  Int32 type,
 );
 
 typedef _dart_TWCoinTypeConfigurationGetName = Pointer<Utf8> Function(

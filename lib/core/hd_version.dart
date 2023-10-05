@@ -1,4 +1,4 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class HDVersion {
   static const int HDVersionNone = 0;

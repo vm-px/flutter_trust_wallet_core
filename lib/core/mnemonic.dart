@@ -1,6 +1,8 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class Mnemonic {
+  const Mnemonic._();
+
   static bool isValid(String mnemonic) {
     return TWMnemonicImpl.isValid(mnemonic);
   }

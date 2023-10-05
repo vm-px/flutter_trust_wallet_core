@@ -1,5 +1,3 @@
-part of trust_wallet_core_ffi;
-
 /// Preset encryption parameter with different security strength, for key store
 
 class TWStoredKeyEncryptionLevel {

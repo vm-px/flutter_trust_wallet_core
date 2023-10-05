@@ -1,5 +1,3 @@
-part of trust_wallet_core_ffi;
-
 class TWStellarMemoType {
   static const int TWStellarMemoTypeNone = 0;
   static const int TWStellarMemoTypeText = 1;

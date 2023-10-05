@@ -1,6 +1,8 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
 class TWMnemonicImpl extends TWMnemonic {
+  TWMnemonicImpl._();
+
   static bool isValid(String mnemonic) {
     final value = TWStringImpl.toTWString(mnemonic);
     final bool result = TWMnemonic.TWMnemonicIsValid(value) >= 1;
@@ -10,7 +12,6 @@ class TWMnemonicImpl extends TWMnemonic {
   }
 
   static bool isValidWord(String word) {
-    final TWStringImpl twString = TWStringImpl();
     final value = TWStringImpl.toTWString(word);
     final bool result = TWMnemonic.TWMnemonicIsValidWord(value) >= 1;
     TWStringImpl.delete(value);

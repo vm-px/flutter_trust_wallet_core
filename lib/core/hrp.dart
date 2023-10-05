@@ -1,5 +1,3 @@
-part of flutter_trust_wallet_core;
-
 class HRP {
   static const int Unknown = 0;
 

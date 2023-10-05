@@ -1,7 +1,7 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
-class TWEthereumMessageSignerImpl extends TWEthereumMessageSigner {
-  TWEthereumMessageSignerImpl._();
+class TWEthereumMessageSignerImpl implements TWEthereumMessageSigner {
+  const TWEthereumMessageSignerImpl._();
 
   static String signMessage(Pointer<Void> privateKey, String message) {
     final twMessage = TWStringImpl.toTWString(message);

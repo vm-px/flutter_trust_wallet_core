@@ -1,5 +1,3 @@
-part of trust_wallet_core_ffi;
-
 /// HD wallet purpose
 ///
 /// See https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki

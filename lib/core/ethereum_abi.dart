@@ -1,4 +1,4 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class EthereumAbi {
   late Pointer<Void> _pointer;
@@ -8,11 +8,11 @@ class EthereumAbi {
   }
 
   static Uint8List encode(EthereumAbiFunction fn) {
-    return TWEthereumAbiImpl.encode(fn._pointer);
+    return TWEthereumAbiImpl.encode(fn.pointer);
   }
 
   static bool decodeOutput(EthereumAbiFunction fn, Uint8List encoded) {
-    return TWEthereumAbiImpl.decodeOutput(fn._pointer, encoded);
+    return TWEthereumAbiImpl.decodeOutput(fn.pointer, encoded);
   }
 
   static String? decodeCall(Uint8List encoded, String string) {

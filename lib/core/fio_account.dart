@@ -1,11 +1,13 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class FIOAccount {
   static late Pointer<Void> _pointer;
 
   FIOAccount.createWithString(String address) {
     _pointer = TWFIOAccountImpl.createWithString(address);
-    if (_pointer.hashCode == 0) throw Exception(["FIOAccount nativehandle is null"]);
+    if (_pointer.hashCode == 0) {
+      throw Exception(['FIOAccount nativehandle is null']);
+    }
   }
 
   String description() {

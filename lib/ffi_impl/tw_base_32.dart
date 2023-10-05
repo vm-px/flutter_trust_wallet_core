@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Base32 encode / decode functions
 abstract class TWBase32 {
@@ -18,8 +18,13 @@ abstract class TWBase32 {
     );
   }
 
-  static late final _TWBase32DecodeWithAlphabet_ptr = _lookup<NativeFunction<_c_TWBase32DecodeWithAlphabet>>('TWBase32DecodeWithAlphabet');
-  static late final _dart_TWBase32DecodeWithAlphabet _TWBase32DecodeWithAlphabet = _TWBase32DecodeWithAlphabet_ptr.asFunction<_dart_TWBase32DecodeWithAlphabet>();
+  static final _TWBase32DecodeWithAlphabet_ptr = lookup<
+      NativeFunction<Pointer<Void> Function(Pointer<Utf8>, Pointer<Utf8>)>>(
+    'TWBase32DecodeWithAlphabet',
+  );
+  static final _dart_TWBase32DecodeWithAlphabet _TWBase32DecodeWithAlphabet =
+      _TWBase32DecodeWithAlphabet_ptr.asFunction<
+          _dart_TWBase32DecodeWithAlphabet>();
 
   /// Decode a Base32 input with the default alphabet (ALPHABET_RFC4648)
   ///
@@ -34,8 +39,11 @@ abstract class TWBase32 {
     );
   }
 
-  static late final _TWBase32Decode_ptr = _lookup<NativeFunction<_c_TWBase32Decode>>('TWBase32Decode');
-  static late final _dart_TWBase32Decode _TWBase32Decode = _TWBase32Decode_ptr.asFunction<_dart_TWBase32Decode>();
+  static final _TWBase32Decode_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Utf8>)>>(
+          'TWBase32Decode');
+  static final _dart_TWBase32Decode _TWBase32Decode =
+      _TWBase32Decode_ptr.asFunction<_dart_TWBase32Decode>();
 
   /// Encode an input to Base32 with the given alphabet
   ///
@@ -53,8 +61,13 @@ abstract class TWBase32 {
     );
   }
 
-  static late final _TWBase32EncodeWithAlphabet_ptr = _lookup<NativeFunction<_c_TWBase32EncodeWithAlphabet>>('TWBase32EncodeWithAlphabet');
-  static late final _dart_TWBase32EncodeWithAlphabet _TWBase32EncodeWithAlphabet = _TWBase32EncodeWithAlphabet_ptr.asFunction<_dart_TWBase32EncodeWithAlphabet>();
+  static final _TWBase32EncodeWithAlphabet_ptr = lookup<
+      NativeFunction<Pointer<Utf8> Function(Pointer<Void>, Pointer<Utf8>)>>(
+    'TWBase32EncodeWithAlphabet',
+  );
+  static final _dart_TWBase32EncodeWithAlphabet _TWBase32EncodeWithAlphabet =
+      _TWBase32EncodeWithAlphabet_ptr.asFunction<
+          _dart_TWBase32EncodeWithAlphabet>();
 
   /// Encode an input to Base32 with the default alphabet (ALPHABET_RFC4648)
   ///
@@ -69,21 +82,15 @@ abstract class TWBase32 {
     );
   }
 
-  static late final _TWBase32Encode_ptr = _lookup<NativeFunction<_c_TWBase32Encode>>('TWBase32Encode');
-  static late final _dart_TWBase32Encode _TWBase32Encode = _TWBase32Encode_ptr.asFunction<_dart_TWBase32Encode>();
+  static final _TWBase32Encode_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+          'TWBase32Encode');
+  static final _dart_TWBase32Encode _TWBase32Encode =
+      _TWBase32Encode_ptr.asFunction<_dart_TWBase32Encode>();
 }
-
-typedef _c_TWBase32Encode = Pointer<Utf8> Function(
-  Pointer<Void> data,
-);
 
 typedef _dart_TWBase32Encode = Pointer<Utf8> Function(
   Pointer<Void> data,
-);
-
-typedef _c_TWBase32EncodeWithAlphabet = Pointer<Utf8> Function(
-  Pointer<Void> data,
-  Pointer<Utf8> alphabet,
 );
 
 typedef _dart_TWBase32EncodeWithAlphabet = Pointer<Utf8> Function(
@@ -91,17 +98,8 @@ typedef _dart_TWBase32EncodeWithAlphabet = Pointer<Utf8> Function(
   Pointer<Utf8> alphabet,
 );
 
-typedef _c_TWBase32Decode = Pointer<Void> Function(
-  Pointer<Utf8> string,
-);
-
 typedef _dart_TWBase32Decode = Pointer<Void> Function(
   Pointer<Utf8> string,
-);
-
-typedef _c_TWBase32DecodeWithAlphabet = Pointer<Void> Function(
-  Pointer<Utf8> string,
-  Pointer<Utf8> alphabet,
 );
 
 typedef _dart_TWBase32DecodeWithAlphabet = Pointer<Void> Function(

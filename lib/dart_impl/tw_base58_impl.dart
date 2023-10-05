@@ -1,8 +1,9 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
 class TWBase58Impl extends TWBase58 {
   static String base58Encode(Uint8List bytes) {
-    final data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
     final encode = TWBase58.TWBase58Encode(data);
     final result = TWStringImpl.toDartString(encode);
     TWData.TWDataDelete(data);
@@ -10,7 +11,8 @@ class TWBase58Impl extends TWBase58 {
   }
 
   static String base58EncodeNoCheck(Uint8List bytes) {
-    final data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
     final encode = TWBase58.TWBase58EncodeNoCheck(data);
     final result = TWStringImpl.toDartString(encode);
     TWData.TWDataDelete(data);
@@ -23,7 +25,8 @@ class TWBase58Impl extends TWBase58 {
     if (decode.address == 0) {
       return null;
     }
-    final result = TWData.TWDataBytes(decode).asTypedList(TWData.TWDataSize(decode));
+    final result =
+        TWData.TWDataBytes(decode).asTypedList(TWData.TWDataSize(decode));
     TWStringImpl.delete(twString);
     return result;
   }
@@ -34,7 +37,8 @@ class TWBase58Impl extends TWBase58 {
     if (decode.address == 0) {
       return null;
     }
-    final result = TWData.TWDataBytes(decode).asTypedList(TWData.TWDataSize(decode));
+    final result =
+        TWData.TWDataBytes(decode).asTypedList(TWData.TWDataSize(decode));
     TWStringImpl.delete(twString);
     return result;
   }

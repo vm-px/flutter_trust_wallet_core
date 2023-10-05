@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Represents an Account in C++ with address, coin type and public key info, an item within a keystore.
 abstract class TWAccount {
@@ -30,8 +30,12 @@ abstract class TWAccount {
     );
   }
 
-  static late final _TWAccountCreate_ptr = _lookup<NativeFunction<_c_TWAccountCreate>>('TWAccountCreate');
-  static late final _dart_TWAccountCreate _TWAccountCreate = _TWAccountCreate_ptr.asFunction<_dart_TWAccountCreate>();
+  static final _TWAccountCreate_ptr = lookup<
+      NativeFunction<
+          Pointer<Void> Function(Pointer<Utf8>, Int32, Int32, Pointer<Utf8>,
+              Pointer<Utf8>, Pointer<Utf8>)>>('TWAccountCreate');
+  static final _dart_TWAccountCreate _TWAccountCreate =
+      _TWAccountCreate_ptr.asFunction<_dart_TWAccountCreate>();
 
   /// Deletes an account.
   ///
@@ -44,8 +48,10 @@ abstract class TWAccount {
     );
   }
 
-  static late final _TWAccountDelete_ptr = _lookup<NativeFunction<_c_TWAccountDelete>>('TWAccountDelete');
-  static late final _dart_TWAccountDelete _TWAccountDelete = _TWAccountDelete_ptr.asFunction<_dart_TWAccountDelete>();
+  static final _TWAccountDelete_ptr =
+      lookup<NativeFunction<Void Function(Pointer<Void>)>>('TWAccountDelete');
+  static final _dart_TWAccountDelete _TWAccountDelete =
+      _TWAccountDelete_ptr.asFunction<_dart_TWAccountDelete>();
 
   /// Returns the address of an account.
   ///
@@ -58,8 +64,11 @@ abstract class TWAccount {
     );
   }
 
-  late final _TWAccountAddress_ptr = _lookup<NativeFunction<_c_TWAccountAddress>>('TWAccountAddress');
-  late final _dart_TWAccountAddress _TWAccountAddress = _TWAccountAddress_ptr.asFunction<_dart_TWAccountAddress>();
+  late final _TWAccountAddress_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+          'TWAccountAddress');
+  late final _dart_TWAccountAddress _TWAccountAddress =
+      _TWAccountAddress_ptr.asFunction<_dart_TWAccountAddress>();
 
   /// Returns the derivation enum of an account.
   ///
@@ -72,8 +81,11 @@ abstract class TWAccount {
     );
   }
 
-  late final _TWAccountDerivation_ptr = _lookup<NativeFunction<_c_TWAccountDerivation>>('TWAccountDerivation');
-  late final _dart_TWAccountDerivation _TWAccountDerivation = _TWAccountDerivation_ptr.asFunction<_dart_TWAccountDerivation>();
+  late final _TWAccountDerivation_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Void>)>>(
+          'TWAccountDerivation');
+  late final _dart_TWAccountDerivation _TWAccountDerivation =
+      _TWAccountDerivation_ptr.asFunction<_dart_TWAccountDerivation>();
 
   /// Returns derivationPath of an account.
   ///
@@ -86,8 +98,12 @@ abstract class TWAccount {
     );
   }
 
-  late final _TWAccountDerivationPath_ptr = _lookup<NativeFunction<_c_TWAccountDerivationPath>>('TWAccountDerivationPath');
-  late final _dart_TWAccountDerivationPath _TWAccountDerivationPath = _TWAccountDerivationPath_ptr.asFunction<_dart_TWAccountDerivationPath>();
+  late final _TWAccountDerivationPath_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+    'TWAccountDerivationPath',
+  );
+  late final _dart_TWAccountDerivationPath _TWAccountDerivationPath =
+      _TWAccountDerivationPath_ptr.asFunction<_dart_TWAccountDerivationPath>();
 
   /// Returns hex encoded publicKey of an account.
   ///
@@ -100,8 +116,11 @@ abstract class TWAccount {
     );
   }
 
-  late final _TWAccountPublicKey_ptr = _lookup<NativeFunction<_c_TWAccountPublicKey>>('TWAccountPublicKey');
-  late final _dart_TWAccountPublicKey _TWAccountPublicKey = _TWAccountPublicKey_ptr.asFunction<_dart_TWAccountPublicKey>();
+  late final _TWAccountPublicKey_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+          'TWAccountPublicKey');
+  late final _dart_TWAccountPublicKey _TWAccountPublicKey =
+      _TWAccountPublicKey_ptr.asFunction<_dart_TWAccountPublicKey>();
 
   /// Returns Base58 encoded extendedPublicKey of an account.
   ///
@@ -114,8 +133,13 @@ abstract class TWAccount {
     );
   }
 
-  late final _TWAccountExtendedPublicKey_ptr = _lookup<NativeFunction<_c_TWAccountExtendedPublicKey>>('TWAccountExtendedPublicKey');
-  late final _dart_TWAccountExtendedPublicKey _TWAccountExtendedPublicKey = _TWAccountExtendedPublicKey_ptr.asFunction<_dart_TWAccountExtendedPublicKey>();
+  late final _TWAccountExtendedPublicKey_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+    'TWAccountExtendedPublicKey',
+  );
+  late final _dart_TWAccountExtendedPublicKey _TWAccountExtendedPublicKey =
+      _TWAccountExtendedPublicKey_ptr.asFunction<
+          _dart_TWAccountExtendedPublicKey>();
 
   /// Return CoinType enum of an account.
   ///
@@ -128,18 +152,11 @@ abstract class TWAccount {
     );
   }
 
-  late final _TWAccountCoin_ptr = _lookup<NativeFunction<_c_TWAccountCoin>>('TWAccountCoin');
-  late final _dart_TWAccountCoin _TWAccountCoin = _TWAccountCoin_ptr.asFunction<_dart_TWAccountCoin>();
+  late final _TWAccountCoin_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Void>)>>('TWAccountCoin');
+  late final _dart_TWAccountCoin _TWAccountCoin =
+      _TWAccountCoin_ptr.asFunction<_dart_TWAccountCoin>();
 }
-
-typedef _c_TWAccountCreate = Pointer<Void> Function(
-  Pointer<Utf8> address,
-  Int32 coin,
-  Int32 derivation,
-  Pointer<Utf8> derivationPath,
-  Pointer<Utf8> publicKey,
-  Pointer<Utf8> extendedPublicKey,
-);
 
 typedef _dart_TWAccountCreate = Pointer<Void> Function(
   Pointer<Utf8> address,
@@ -150,15 +167,7 @@ typedef _dart_TWAccountCreate = Pointer<Void> Function(
   Pointer<Utf8> extendedPublicKey,
 );
 
-typedef _c_TWAccountDelete = Void Function(
-  Pointer<Void> account,
-);
-
 typedef _dart_TWAccountDelete = void Function(
-  Pointer<Void> account,
-);
-
-typedef _c_TWAccountAddress = Pointer<Utf8> Function(
   Pointer<Void> account,
 );
 
@@ -166,15 +175,7 @@ typedef _dart_TWAccountAddress = Pointer<Utf8> Function(
   Pointer<Void> account,
 );
 
-typedef _c_TWAccountDerivation = Int32 Function(
-  Pointer<Void> account,
-);
-
 typedef _dart_TWAccountDerivation = int Function(
-  Pointer<Void> account,
-);
-
-typedef _c_TWAccountDerivationPath = Pointer<Utf8> Function(
   Pointer<Void> account,
 );
 
@@ -182,22 +183,10 @@ typedef _dart_TWAccountDerivationPath = Pointer<Utf8> Function(
   Pointer<Void> account,
 );
 
-typedef _c_TWAccountPublicKey = Pointer<Utf8> Function(
-  Pointer<Void> account,
-);
-
-typedef _c_TWAccountExtendedPublicKey = Pointer<Utf8> Function(
-  Pointer<Void> account,
-);
-
 typedef _dart_TWAccountPublicKey = Pointer<Utf8> Function(
   Pointer<Void> account,
 );
 typedef _dart_TWAccountExtendedPublicKey = Pointer<Utf8> Function(
-  Pointer<Void> account,
-);
-
-typedef _c_TWAccountCoin = Int32 Function(
   Pointer<Void> account,
 );
 

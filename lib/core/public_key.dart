@@ -1,4 +1,4 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class PublicKey {
   static const int PublicKeyCompressedSize = 33;
@@ -8,7 +8,7 @@ class PublicKey {
 
   Pointer<Void> get pointer => _nativehandle;
 
-  PublicKey._(Pointer<Void> pointer) {
+  PublicKey(Pointer<Void> pointer) {
     _nativehandle = pointer;
   }
 
@@ -58,6 +58,10 @@ class PublicKey {
   }
 
   bool verifySchnorr(Uint8List signature, Uint8List message) {
-    return TWPublicKeyImpl.verifyZilliqaSchnorr(_nativehandle, signature, message);
+    return TWPublicKeyImpl.verifyZilliqaSchnorr(
+      _nativehandle,
+      signature,
+      message,
+    );
   }
 }

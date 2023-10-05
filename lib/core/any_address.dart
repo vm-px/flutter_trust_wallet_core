@@ -1,14 +1,17 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class AnyAddress {
   late Pointer<Void> _pointer;
 
-  AnyAddress.createWithString(String address, int cpinType) {
-    _pointer = TWAnyAddressImpl.createWithString(address, cpinType);
+  AnyAddress.createWithString(String address, int coinType) {
+    _pointer = TWAnyAddressImpl.createWithString(address, coinType);
   }
 
-  AnyAddress.createWithPublicKey(PublicKey publicKey, int cpinType) {
-    _pointer = TWAnyAddressImpl.createWithPublicKey(publicKey._nativehandle, cpinType);
+  AnyAddress.createWithPublicKey(PublicKey publicKey, int coinType) {
+    _pointer = TWAnyAddressImpl.createWithPublicKey(
+      publicKey.pointer,
+      coinType,
+    );
   }
 
   static bool isValid(String address, int coinType) {

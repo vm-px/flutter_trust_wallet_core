@@ -1,16 +1,24 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class RippleXAddress {
   static late Pointer<Void> _pointer;
 
   RippleXAddress.createWithString(String address) {
     _pointer = TWRippleXAddressImpl.createWithString(address);
-    if (_pointer.hashCode == 0) throw Exception(["RippleXAddress nativehandle is null"]);
+    if (_pointer.hashCode == 0) {
+      throw Exception(['RippleXAddress nativehandle is null']);
+    }
   }
 
   RippleXAddress.createWithPublicKey(PublicKey publicKey, int cpinType) {
-    _pointer = TWRippleXAddressImpl.createWithPublicKey(publicKey._nativehandle, cpinType);
-    if (_pointer.hashCode == 0) throw Exception(["RippleXAddress nativehandle is null"]);
+    _pointer = TWRippleXAddressImpl.createWithPublicKey(
+      publicKey.pointer,
+      cpinType,
+    );
+
+    if (_pointer.hashCode == 0) {
+      throw Exception(['RippleXAddress nativehandle is null']);
+    }
   }
 
   static bool equal() {

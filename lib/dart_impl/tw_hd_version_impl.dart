@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
 class TWHDVersionImpl extends TWHDVersion {
   static bool isPublic(int version) {

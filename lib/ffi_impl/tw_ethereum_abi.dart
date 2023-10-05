@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Wrapper class for Ethereum ABI encoding & decoding.
 abstract class TWEthereumAbi {
@@ -14,8 +14,11 @@ abstract class TWEthereumAbi {
     );
   }
 
-  static late final _TWEthereumAbiEncode_ptr = _lookup<NativeFunction<_c_TWEthereumAbiEncode>>('TWEthereumAbiEncode');
-  static late final _dart_TWEthereumAbiEncode _TWEthereumAbiEncode = _TWEthereumAbiEncode_ptr.asFunction<_dart_TWEthereumAbiEncode>();
+  static final _TWEthereumAbiEncode_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>)>>(
+          'TWEthereumAbiEncode');
+  static final _dart_TWEthereumAbiEncode _TWEthereumAbiEncode =
+      _TWEthereumAbiEncode_ptr.asFunction<_dart_TWEthereumAbiEncode>();
 
   /// Decode function output from Eth ABI binary, fill output parameters
   ///
@@ -32,8 +35,13 @@ abstract class TWEthereumAbi {
     );
   }
 
-  static late final _TWEthereumAbiDecodeOutput_ptr = _lookup<NativeFunction<_c_TWEthereumAbiDecodeOutput>>('TWEthereumAbiDecodeOutput');
-  static late final _dart_TWEthereumAbiDecodeOutput _TWEthereumAbiDecodeOutput = _TWEthereumAbiDecodeOutput_ptr.asFunction<_dart_TWEthereumAbiDecodeOutput>();
+  static final _TWEthereumAbiDecodeOutput_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Void>, Pointer<Void>)>>(
+    'TWEthereumAbiDecodeOutput',
+  );
+  static final _dart_TWEthereumAbiDecodeOutput _TWEthereumAbiDecodeOutput =
+      _TWEthereumAbiDecodeOutput_ptr.asFunction<
+          _dart_TWEthereumAbiDecodeOutput>();
 
   /// Decode function call data to human readable json format, according to input abi json
   ///
@@ -50,8 +58,12 @@ abstract class TWEthereumAbi {
     );
   }
 
-  static late final _TWEthereumAbiDecodeCall_ptr = _lookup<NativeFunction<_c_TWEthereumAbiDecodeCall>>('TWEthereumAbiDecodeCall');
-  static late final _dart_TWEthereumAbiDecodeCall _TWEthereumAbiDecodeCall = _TWEthereumAbiDecodeCall_ptr.asFunction<_dart_TWEthereumAbiDecodeCall>();
+  static final _TWEthereumAbiDecodeCall_ptr = lookup<
+      NativeFunction<Pointer<Utf8> Function(Pointer<Void>, Pointer<Utf8>)>>(
+    'TWEthereumAbiDecodeCall',
+  );
+  static final _dart_TWEthereumAbiDecodeCall _TWEthereumAbiDecodeCall =
+      _TWEthereumAbiDecodeCall_ptr.asFunction<_dart_TWEthereumAbiDecodeCall>();
 
   /// Compute the hash of a struct, used for signing, according to EIP712 ("v4").
   /// Input is a Json object (as string), with following fields:
@@ -99,21 +111,17 @@ abstract class TWEthereumAbi {
     );
   }
 
-  static late final _TWEthereumAbiEncodeTyped_ptr = _lookup<NativeFunction<_c_TWEthereumAbiEncodeTyped>>('TWEthereumAbiEncodeTyped');
-  static late final _dart_TWEthereumAbiEncodeTyped _TWEthereumAbiEncodeTyped = _TWEthereumAbiEncodeTyped_ptr.asFunction<_dart_TWEthereumAbiEncodeTyped>();
+  static final _TWEthereumAbiEncodeTyped_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Utf8>)>>(
+    'TWEthereumAbiEncodeTyped',
+  );
+  static final _dart_TWEthereumAbiEncodeTyped _TWEthereumAbiEncodeTyped =
+      _TWEthereumAbiEncodeTyped_ptr.asFunction<
+          _dart_TWEthereumAbiEncodeTyped>();
 }
-
-typedef _c_TWEthereumAbiEncode = Pointer<Void> Function(
-  Pointer<Void> fn,
-);
 
 typedef _dart_TWEthereumAbiEncode = Pointer<Void> Function(
   Pointer<Void> fn,
-);
-
-typedef _c_TWEthereumAbiDecodeOutput = Int32 Function(
-  Pointer<Void> fn,
-  Pointer<Void> encoded,
 );
 
 typedef _dart_TWEthereumAbiDecodeOutput = int Function(
@@ -121,18 +129,9 @@ typedef _dart_TWEthereumAbiDecodeOutput = int Function(
   Pointer<Void> encoded,
 );
 
-typedef _c_TWEthereumAbiDecodeCall = Pointer<Utf8> Function(
-  Pointer<Void> data,
-  Pointer<Utf8> abi,
-);
-
 typedef _dart_TWEthereumAbiDecodeCall = Pointer<Utf8> Function(
   Pointer<Void> data,
   Pointer<Utf8> abi,
-);
-
-typedef _c_TWEthereumAbiEncodeTyped = Pointer<Void> Function(
-  Pointer<Utf8> messageJson,
 );
 
 typedef _dart_TWEthereumAbiEncodeTyped = Pointer<Void> Function(

@@ -1,8 +1,9 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
 class TWPublicKeyImpl extends TWPublicKey {
   static bool isValid(Uint8List data, int publicKeyType) {
-    final _data = TWData.TWDataCreateWithBytes(data.toPointerUint8(), data.length);
+    final _data =
+        TWData.TWDataCreateWithBytes(data.toPointerUint8(), data.length);
 
     final result = TWPublicKey.TWPublicKeyIsValid(_data, publicKeyType) >= 1;
 
@@ -11,7 +12,8 @@ class TWPublicKeyImpl extends TWPublicKey {
   }
 
   static Pointer<Void> createWithData(Pointer<Void> data, int publicKeyType) {
-    final publickey = TWPublicKey.TWPublicKeyCreateWithData(data, publicKeyType);
+    final publickey =
+        TWPublicKey.TWPublicKeyCreateWithData(data, publicKeyType);
 
     return publickey;
   }
@@ -23,8 +25,10 @@ class TWPublicKeyImpl extends TWPublicKey {
   }
 
   static Pointer<Void>? recover(Uint8List signature, Uint8List message) {
-    final _signatureData = TWData.TWDataCreateWithBytes(signature.toPointerUint8(), signature.length);
-    final _messageData = TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
+    final _signatureData = TWData.TWDataCreateWithBytes(
+        signature.toPointerUint8(), signature.length);
+    final _messageData =
+        TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
     final result = TWPublicKey.TWPublicKeyRecover(_signatureData, _messageData);
     if (result.address == 0) {
       return null;
@@ -51,26 +55,37 @@ class TWPublicKeyImpl extends TWPublicKey {
   }
 
   static String description(Pointer<Void> publicKey) {
-    return TWStringImpl.toDartString(TWPublicKey.TWPublicKeyDescription(publicKey));
+    return TWStringImpl.toDartString(
+        TWPublicKey.TWPublicKeyDescription(publicKey));
   }
 
   static void delete(Pointer<Void> publicKey) {
     return TWPublicKey.TWPublicKeyDelete(publicKey);
   }
 
-  static bool verify(Pointer<Void> publicKey, Uint8List signature, Uint8List message) {
-    final _signatureData = TWData.TWDataCreateWithBytes(signature.toPointerUint8(), signature.length);
-    final _messageData = TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
-    final result = TWPublicKey.TWPublicKeyVerify(publicKey, _signatureData, _messageData) >= 1;
+  static bool verify(
+      Pointer<Void> publicKey, Uint8List signature, Uint8List message) {
+    final _signatureData = TWData.TWDataCreateWithBytes(
+        signature.toPointerUint8(), signature.length);
+    final _messageData =
+        TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
+    final result = TWPublicKey.TWPublicKeyVerify(
+            publicKey, _signatureData, _messageData) >=
+        1;
     TWData.TWDataDelete(_signatureData);
     TWData.TWDataDelete(_messageData);
     return result;
   }
 
-  static bool verifyZilliqaSchnorr(Pointer<Void> publicKey, Uint8List signature, Uint8List message) {
-    final _signatureData = TWData.TWDataCreateWithBytes(signature.toPointerUint8(), signature.length);
-    final _messageData = TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
-    final result = TWPublicKey.TWPublicKeyVerifyZilliqaSchnorr(publicKey, _signatureData, _messageData) >= 1;
+  static bool verifyZilliqaSchnorr(
+      Pointer<Void> publicKey, Uint8List signature, Uint8List message) {
+    final _signatureData = TWData.TWDataCreateWithBytes(
+        signature.toPointerUint8(), signature.length);
+    final _messageData =
+        TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
+    final result = TWPublicKey.TWPublicKeyVerifyZilliqaSchnorr(
+            publicKey, _signatureData, _messageData) >=
+        1;
     TWData.TWDataDelete(_signatureData);
     TWData.TWDataDelete(_messageData);
     return result;

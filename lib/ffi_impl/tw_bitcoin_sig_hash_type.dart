@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Bitcoin SIGHASH type.
 abstract class TWBitcoinSigHashType {
@@ -21,8 +21,13 @@ abstract class TWBitcoinSigHashType {
     );
   }
 
-  static late final _TWBitcoinSigHashTypeIsSingle_ptr = _lookup<NativeFunction<_c_TWBitcoinSigHashTypeIsSingle>>('TWBitcoinSigHashTypeIsSingle');
-  static late final _dart_TWBitcoinSigHashTypeIsSingle _TWBitcoinSigHashTypeIsSingle = _TWBitcoinSigHashTypeIsSingle_ptr.asFunction<_dart_TWBitcoinSigHashTypeIsSingle>();
+  static final _TWBitcoinSigHashTypeIsSingle_ptr =
+      lookup<NativeFunction<Int32 Function(Int32)>>(
+    'TWBitcoinSigHashTypeIsSingle',
+  );
+  static final _dart_TWBitcoinSigHashTypeIsSingle
+      _TWBitcoinSigHashTypeIsSingle = _TWBitcoinSigHashTypeIsSingle_ptr
+          .asFunction<_dart_TWBitcoinSigHashTypeIsSingle>();
 
   /// Determines if the given sig hash is none
   ///
@@ -36,20 +41,17 @@ abstract class TWBitcoinSigHashType {
     );
   }
 
-  static late final _TWBitcoinSigHashTypeIsNone_ptr = _lookup<NativeFunction<_c_TWBitcoinSigHashTypeIsNone>>('TWBitcoinSigHashTypeIsNone');
-  static late final _dart_TWBitcoinSigHashTypeIsNone _TWBitcoinSigHashTypeIsNone = _TWBitcoinSigHashTypeIsNone_ptr.asFunction<_dart_TWBitcoinSigHashTypeIsNone>();
+  static final _TWBitcoinSigHashTypeIsNone_ptr =
+      lookup<NativeFunction<Int32 Function(Int32)>>(
+    'TWBitcoinSigHashTypeIsNone',
+  );
+  static final _dart_TWBitcoinSigHashTypeIsNone _TWBitcoinSigHashTypeIsNone =
+      _TWBitcoinSigHashTypeIsNone_ptr.asFunction<
+          _dart_TWBitcoinSigHashTypeIsNone>();
 }
-
-typedef _c_TWBitcoinSigHashTypeIsSingle = Int32 Function(
-  Int32 type,
-);
 
 typedef _dart_TWBitcoinSigHashTypeIsSingle = int Function(
   int type,
-);
-
-typedef _c_TWBitcoinSigHashTypeIsNone = Int32 Function(
-  Int32 type,
 );
 
 typedef _dart_TWBitcoinSigHashTypeIsNone = int Function(

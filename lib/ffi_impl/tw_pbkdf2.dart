@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Password-Based Key Derivation Function 2
 abstract class TWPBKDF2 {
@@ -23,8 +23,12 @@ abstract class TWPBKDF2 {
     );
   }
 
-  static late final _TWPBKDF2HmacSha256_ptr = _lookup<NativeFunction<_c_TWPBKDF2HmacSha256>>('TWPBKDF2HmacSha256');
-  static late final _dart_TWPBKDF2HmacSha256 _TWPBKDF2HmacSha256 = _TWPBKDF2HmacSha256_ptr.asFunction<_dart_TWPBKDF2HmacSha256>();
+  static final _TWPBKDF2HmacSha256_ptr = lookup<
+      NativeFunction<
+          Pointer<Void> Function(Pointer<Void>, Pointer<Void>, Int64,
+              Int64)>>('TWPBKDF2HmacSha256');
+  static final _dart_TWPBKDF2HmacSha256 _TWPBKDF2HmacSha256 =
+      _TWPBKDF2HmacSha256_ptr.asFunction<_dart_TWPBKDF2HmacSha256>();
 
   /// Derives a key from a password and a salt using PBKDF2 + Sha512.
   ///
@@ -47,29 +51,19 @@ abstract class TWPBKDF2 {
     );
   }
 
-  static late final _TWPBKDF2HmacSha512_ptr = _lookup<NativeFunction<_c_TWPBKDF2HmacSha512>>('TWPBKDF2HmacSha512');
-  static late final _dart_TWPBKDF2HmacSha512 _TWPBKDF2HmacSha512 = _TWPBKDF2HmacSha512_ptr.asFunction<_dart_TWPBKDF2HmacSha512>();
+  static final _TWPBKDF2HmacSha512_ptr = lookup<
+      NativeFunction<
+          Pointer<Void> Function(Pointer<Void>, Pointer<Void>, Int64,
+              Int64)>>('TWPBKDF2HmacSha512');
+  static final _dart_TWPBKDF2HmacSha512 _TWPBKDF2HmacSha512 =
+      _TWPBKDF2HmacSha512_ptr.asFunction<_dart_TWPBKDF2HmacSha512>();
 }
-
-typedef _c_TWPBKDF2HmacSha256 = Pointer<Void> Function(
-  Pointer<Void> password,
-  Pointer<Void> salt,
-  Int64 iterations,
-  Int64 dkLen,
-);
 
 typedef _dart_TWPBKDF2HmacSha256 = Pointer<Void> Function(
   Pointer<Void> password,
   Pointer<Void> salt,
   int iterations,
   int dkLen,
-);
-
-typedef _c_TWPBKDF2HmacSha512 = Pointer<Void> Function(
-  Pointer<Void> password,
-  Pointer<Void> salt,
-  Int64 iterations,
-  Int64 dkLen,
 );
 
 typedef _dart_TWPBKDF2HmacSha512 = Pointer<Void> Function(

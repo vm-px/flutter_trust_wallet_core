@@ -1,9 +1,10 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
 class TWSegwitAddressImpl extends TWSegwitAddress {
   static Pointer<Void> createWithString(String string) {
     final _string = TWStringImpl.toTWString(string);
-    final segwitAddress = TWSegwitAddress.TWSegwitAddressCreateWithString(_string);
+    final segwitAddress =
+        TWSegwitAddress.TWSegwitAddressCreateWithString(_string);
     TWStringImpl.delete(_string);
     return segwitAddress;
   }
@@ -12,7 +13,8 @@ class TWSegwitAddressImpl extends TWSegwitAddress {
     int hrp,
     Pointer<Void> publicKey,
   ) {
-    final segwitAddress = TWSegwitAddress.TWSegwitAddressCreateWithPublicKey(hrp, publicKey);
+    final segwitAddress =
+        TWSegwitAddress.TWSegwitAddressCreateWithPublicKey(hrp, publicKey);
     return segwitAddress;
   }
 
@@ -29,7 +31,8 @@ class TWSegwitAddressImpl extends TWSegwitAddress {
   }
 
   static String description(Pointer<Void> address) {
-    return TWStringImpl.toDartString(TWSegwitAddress.TWSegwitAddressDescription(address));
+    return TWStringImpl.toDartString(
+        TWSegwitAddress.TWSegwitAddressDescription(address));
   }
 
   static void delete(Pointer<Void> address) {

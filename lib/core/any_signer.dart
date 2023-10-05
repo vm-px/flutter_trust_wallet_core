@@ -1,6 +1,8 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class AnySigner {
+  const AnySigner._();
+
   static Uint8List sign(Uint8List bytes, int coin) {
     return TWAnySignerImpl.sign(bytes, coin);
   }

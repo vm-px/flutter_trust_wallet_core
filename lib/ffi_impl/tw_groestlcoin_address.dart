@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Represents a legacy Groestlcoin address.
 abstract class TWGroestlcoinAddress {
@@ -17,8 +17,13 @@ abstract class TWGroestlcoinAddress {
     );
   }
 
-  static late final _TWGroestlcoinAddressEqual_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressEqual>>('TWGroestlcoinAddressEqual');
-  static late final _dart_TWGroestlcoinAddressEqual _TWGroestlcoinAddressEqual = _TWGroestlcoinAddressEqual_ptr.asFunction<_dart_TWGroestlcoinAddressEqual>();
+  static final _TWGroestlcoinAddressEqual_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Void>, Pointer<Void>)>>(
+    'TWGroestlcoinAddressEqual',
+  );
+  static final _dart_TWGroestlcoinAddressEqual _TWGroestlcoinAddressEqual =
+      _TWGroestlcoinAddressEqual_ptr.asFunction<
+          _dart_TWGroestlcoinAddressEqual>();
 
   /// Determines if the string is a valid Groestlcoin address.
   ///
@@ -32,9 +37,14 @@ abstract class TWGroestlcoinAddress {
     );
   }
 
-  static late final _TWGroestlcoinAddressIsValidString_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressIsValidString>>('TWGroestlcoinAddressIsValidString');
-  static late final _dart_TWGroestlcoinAddressIsValidString _TWGroestlcoinAddressIsValidString =
-      _TWGroestlcoinAddressIsValidString_ptr.asFunction<_dart_TWGroestlcoinAddressIsValidString>();
+  static final _TWGroestlcoinAddressIsValidString_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Utf8>)>>(
+    'TWGroestlcoinAddressIsValidString',
+  );
+  static final _dart_TWGroestlcoinAddressIsValidString
+      _TWGroestlcoinAddressIsValidString =
+      _TWGroestlcoinAddressIsValidString_ptr.asFunction<
+          _dart_TWGroestlcoinAddressIsValidString>();
 
   /// Create an address from a base58 string representation.
   ///
@@ -49,9 +59,14 @@ abstract class TWGroestlcoinAddress {
     );
   }
 
-  static late final _TWGroestlcoinAddressCreateWithString_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressCreateWithString>>('TWGroestlcoinAddressCreateWithString');
-  static late final _dart_TWGroestlcoinAddressCreateWithString _TWGroestlcoinAddressCreateWithString =
-      _TWGroestlcoinAddressCreateWithString_ptr.asFunction<_dart_TWGroestlcoinAddressCreateWithString>();
+  static final _TWGroestlcoinAddressCreateWithString_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Utf8>)>>(
+    'TWGroestlcoinAddressCreateWithString',
+  );
+  static final _dart_TWGroestlcoinAddressCreateWithString
+      _TWGroestlcoinAddressCreateWithString =
+      _TWGroestlcoinAddressCreateWithString_ptr.asFunction<
+          _dart_TWGroestlcoinAddressCreateWithString>();
 
   /// Create an address from a public key and a prefix byte.
   ///
@@ -69,9 +84,14 @@ abstract class TWGroestlcoinAddress {
     );
   }
 
-  static late final _TWGroestlcoinAddressCreateWithPublicKey_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressCreateWithPublicKey>>('TWGroestlcoinAddressCreateWithPublicKey');
-  static late final _dart_TWGroestlcoinAddressCreateWithPublicKey _TWGroestlcoinAddressCreateWithPublicKey =
-      _TWGroestlcoinAddressCreateWithPublicKey_ptr.asFunction<_dart_TWGroestlcoinAddressCreateWithPublicKey>();
+  static final _TWGroestlcoinAddressCreateWithPublicKey_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>, Int32)>>(
+    'TWGroestlcoinAddressCreateWithPublicKey',
+  );
+  static final _dart_TWGroestlcoinAddressCreateWithPublicKey
+      _TWGroestlcoinAddressCreateWithPublicKey =
+      _TWGroestlcoinAddressCreateWithPublicKey_ptr.asFunction<
+          _dart_TWGroestlcoinAddressCreateWithPublicKey>();
 
   /// Delete a Groestlcoin address
   ///
@@ -84,8 +104,13 @@ abstract class TWGroestlcoinAddress {
     );
   }
 
-  static late final _TWGroestlcoinAddressDelete_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressDelete>>('TWGroestlcoinAddressDelete');
-  static late final _dart_TWGroestlcoinAddressDelete _TWGroestlcoinAddressDelete = _TWGroestlcoinAddressDelete_ptr.asFunction<_dart_TWGroestlcoinAddressDelete>();
+  static final _TWGroestlcoinAddressDelete_ptr =
+      lookup<NativeFunction<Void Function(Pointer<Void>)>>(
+    'TWGroestlcoinAddressDelete',
+  );
+  static final _dart_TWGroestlcoinAddressDelete _TWGroestlcoinAddressDelete =
+      _TWGroestlcoinAddressDelete_ptr.asFunction<
+          _dart_TWGroestlcoinAddressDelete>();
 
   /// Returns the address base58 string representation.
   ///
@@ -99,30 +124,21 @@ abstract class TWGroestlcoinAddress {
     );
   }
 
-  static late final _TWGroestlcoinAddressDescription_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressDescription>>('TWGroestlcoinAddressDescription');
-  static late final _dart_TWGroestlcoinAddressDescription _TWGroestlcoinAddressDescription =
-      _TWGroestlcoinAddressDescription_ptr.asFunction<_dart_TWGroestlcoinAddressDescription>();
+  static final _TWGroestlcoinAddressDescription_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+    'TWGroestlcoinAddressDescription',
+  );
+  static final _dart_TWGroestlcoinAddressDescription
+      _TWGroestlcoinAddressDescription = _TWGroestlcoinAddressDescription_ptr
+          .asFunction<_dart_TWGroestlcoinAddressDescription>();
 }
-
-typedef _c_TWGroestlcoinAddressEqual = Int32 Function(
-  Pointer<Void> lhs,
-  Pointer<Void> rhs,
-);
 
 typedef _dart_TWGroestlcoinAddressEqual = int Function(
   Pointer<Void> lhs,
   Pointer<Void> rhs,
 );
 
-typedef _c_TWGroestlcoinAddressIsValidString = Int32 Function(
-  Pointer<Utf8> string,
-);
-
 typedef _dart_TWGroestlcoinAddressIsValidString = int Function(
-  Pointer<Utf8> string,
-);
-
-typedef _c_TWGroestlcoinAddressCreateWithString = Pointer<Void> Function(
   Pointer<Utf8> string,
 );
 
@@ -130,25 +146,12 @@ typedef _dart_TWGroestlcoinAddressCreateWithString = Pointer<Void> Function(
   Pointer<Utf8> string,
 );
 
-typedef _c_TWGroestlcoinAddressCreateWithPublicKey = Pointer<Void> Function(
-  Pointer<Void> publicKey,
-  Int32 prefix,
-);
-
 typedef _dart_TWGroestlcoinAddressCreateWithPublicKey = Pointer<Void> Function(
   Pointer<Void> publicKey,
   int prefix,
 );
 
-typedef _c_TWGroestlcoinAddressDelete = Void Function(
-  Pointer<Void> address,
-);
-
 typedef _dart_TWGroestlcoinAddressDelete = void Function(
-  Pointer<Void> address,
-);
-
-typedef _c_TWGroestlcoinAddressDescription = Pointer<Utf8> Function(
   Pointer<Void> address,
 );
 

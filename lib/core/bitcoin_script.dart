@@ -1,25 +1,31 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class BitcoinScript {
   late Pointer<Void> _pointer;
+
+  BitcoinScript() {
+    _pointer = TWBitcoinScriptImpl.create();
+    if (_pointer.hashCode == 0) {
+      throw Exception(['BitcoinScript nativehandle is null']);
+    }
+  }
 
   BitcoinScript._(Pointer<Void> pointer) {
     _pointer = pointer;
   }
 
-  BitcoinScript() {
-    _pointer = TWBitcoinScriptImpl.create();
-    if (_pointer.hashCode == 0) throw Exception(["BitcoinScript nativehandle is null"]);
-  }
-
   BitcoinScript.createWithData(Uint8List bytes) {
     _pointer = TWBitcoinScriptImpl.createWithData(bytes);
-    if (_pointer.hashCode == 0) throw Exception(["BitcoinScript nativehandle is null"]);
+    if (_pointer.hashCode == 0) {
+      throw Exception(['BitcoinScript nativehandle is null']);
+    }
   }
 
   BitcoinScript.createWithScript(Pointer<Void> script) {
     _pointer = TWBitcoinScriptImpl.createWithScript(script);
-    if (_pointer.hashCode == 0) throw Exception(["BitcoinScript nativehandle is null"]);
+    if (_pointer.hashCode == 0) {
+      throw Exception(['BitcoinScript nativehandle is null']);
+    }
   }
 
   static bool equal(Pointer<Void> lhs, Pointer<Void> rhs) {

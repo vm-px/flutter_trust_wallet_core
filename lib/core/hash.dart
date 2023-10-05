@@ -1,6 +1,8 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class Hash {
+  const Hash._();
+
   static const int HashSHA1Length = 20;
   static const int HashSHA256Length = 32;
   static const int HashSHA512Length = 64;

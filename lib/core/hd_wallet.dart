@@ -1,82 +1,100 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class HDWallet {
-  late Pointer<Void> _nativehandle;
+  late Pointer<Void> _pointer;
 
-  HDWallet({int strength = 128, String passphrase = ''}) {
-    _nativehandle =
-        TWHDWalletImpl.create(strength: strength, passphrase: passphrase);
-    if (_nativehandle.hashCode == 0) {
+  Pointer<Void> get pointer => _pointer;
+
+  HDWallet({
+    int strength = 128,
+    String passphrase = '',
+    Pointer<Void>? pointer,
+  }) {
+    if (pointer != null) {
+      _pointer = pointer;
+    } else {
+      _pointer = TWHDWalletImpl.create(
+        strength: strength,
+        passphrase: passphrase,
+      );
+    }
+
+    if (_pointer.hashCode == 0) {
       throw Exception(['HDWallet nativehandle is null']);
     }
   }
 
-  HDWallet._(Pointer<Void> pointer) {
-    _nativehandle = pointer;
-  }
-
   HDWallet.createWithMnemonic(String mnemonic, {String passphrase = ''}) {
-    _nativehandle =
-        TWHDWalletImpl.createWithMnemonic(mnemonic, passphrase: passphrase);
-    if (_nativehandle.hashCode == 0) {
+    _pointer = TWHDWalletImpl.createWithMnemonic(
+      mnemonic,
+      passphrase: passphrase,
+    );
+
+    if (_pointer.hashCode == 0) {
       throw Exception(['HDWallet nativehandle is null']);
     }
   }
 
   HDWallet.createWithData(Uint8List bytes, {String passphrase = ''}) {
-    _nativehandle =
-        TWHDWalletImpl.createWithEntropy(bytes, passphrase: passphrase);
-    if (_nativehandle.hashCode == 0) {
+    _pointer = TWHDWalletImpl.createWithEntropy(
+      bytes,
+      passphrase: passphrase,
+    );
+
+    if (_pointer.hashCode == 0) {
       throw Exception(['HDWallet nativehandle is null']);
     }
   }
 
   String getAddressForCoin(int coinType) {
-    return TWHDWalletImpl.getAddressForCoin(_nativehandle, coinType);
+    return TWHDWalletImpl.getAddressForCoin(_pointer, coinType);
   }
 
   PrivateKey getDerivedKey(int coinType, int account, int change, int address) {
     final pointer = TWHDWalletImpl.getDerivedKey(
-      _nativehandle,
+      _pointer,
       coinType,
       account,
       change,
       address,
     );
-    return PrivateKey._(pointer);
+
+    return PrivateKey(pointer);
   }
 
   PrivateKey getKeyForCoin(int coinType) {
-    final pointer = TWHDWalletImpl.getKeyForCoin(_nativehandle, coinType);
-    return PrivateKey._(pointer);
+    final pointer = TWHDWalletImpl.getKeyForCoin(_pointer, coinType);
+
+    return PrivateKey(pointer);
   }
 
   PrivateKey getKey(int coinType, String derivationPath) {
-    final pointer =
-        TWHDWalletImpl.getKey(_nativehandle, coinType, derivationPath);
-    return PrivateKey._(pointer);
+    final pointer = TWHDWalletImpl.getKey(_pointer, coinType, derivationPath);
+
+    return PrivateKey(pointer);
   }
 
   PrivateKey getMasterKey(int curve) {
-    final pointer = TWHDWalletImpl.getMasterKey(_nativehandle, curve);
-    return PrivateKey._(pointer);
+    final pointer = TWHDWalletImpl.getMasterKey(_pointer, curve);
+
+    return PrivateKey(pointer);
   }
 
   void delete() {
-    TWHDWalletImpl.delete(_nativehandle);
+    TWHDWalletImpl.delete(_pointer);
   }
 
   Uint8List seed() {
-    return TWHDWalletImpl.seed(_nativehandle);
+    return TWHDWalletImpl.seed(_pointer);
   }
 
   String mnemonic() {
-    return TWHDWalletImpl.mnemonic(_nativehandle);
+    return TWHDWalletImpl.mnemonic(_pointer);
   }
 
   String getExtendedPublicKey(int purpose, int coinType, int twHdVersion) {
     return TWHDWalletImpl.getExtendedPublicKey(
-      _nativehandle,
+      _pointer,
       purpose,
       coinType,
       twHdVersion,

@@ -1,6 +1,8 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class Base58 {
+  const Base58._();
+
   static String base58Encode(Uint8List bytes) {
     return TWBase58Impl.base58Encode(bytes);
   }

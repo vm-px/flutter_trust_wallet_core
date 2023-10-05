@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Defines a resizable string.
 ///
@@ -17,9 +17,14 @@ class TWString {
     );
   }
 
-  static late final _TWStringCreateWithUTF8Bytes_ptr = _lookup<NativeFunction<_c_TWStringCreateWithUTF8Bytes>>('TWStringCreateWithUTF8Bytes');
+  static final _TWStringCreateWithUTF8Bytes_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Utf8>)>>(
+    'TWStringCreateWithUTF8Bytes',
+  );
 
-  static late final _dart_TWStringCreateWithUTF8Bytes _TWStringCreateWithUTF8Bytes = _TWStringCreateWithUTF8Bytes_ptr.asFunction<_dart_TWStringCreateWithUTF8Bytes>();
+  static final _dart_TWStringCreateWithUTF8Bytes _TWStringCreateWithUTF8Bytes =
+      _TWStringCreateWithUTF8Bytes_ptr.asFunction<
+          _dart_TWStringCreateWithUTF8Bytes>();
 
   /// Creates a string from a raw byte array and size. It must be deleted at the end.
   ///
@@ -35,8 +40,13 @@ class TWString {
     );
   }
 
-  static late final _TWStringCreateWithRawBytes_ptr = _lookup<NativeFunction<_c_TWStringCreateWithRawBytes>>('TWStringCreateWithRawBytes');
-  static late final _dart_TWStringCreateWithRawBytes _TWStringCreateWithRawBytes = _TWStringCreateWithRawBytes_ptr.asFunction<_dart_TWStringCreateWithRawBytes>();
+  static final _TWStringCreateWithRawBytes_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Uint8>, Int32)>>(
+    'TWStringCreateWithRawBytes',
+  );
+  static final _dart_TWStringCreateWithRawBytes _TWStringCreateWithRawBytes =
+      _TWStringCreateWithRawBytes_ptr.asFunction<
+          _dart_TWStringCreateWithRawBytes>();
 
   /// Creates a hexadecimal string from a block of data. It must be deleted at the end.
   ///
@@ -49,8 +59,13 @@ class TWString {
     );
   }
 
-  static late final _TWStringCreateWithHexData_ptr = _lookup<NativeFunction<_c_TWStringCreateWithHexData>>('TWStringCreateWithHexData');
-  static late final _dart_TWStringCreateWithHexData _TWStringCreateWithHexData = _TWStringCreateWithHexData_ptr.asFunction<_dart_TWStringCreateWithHexData>();
+  static final _TWStringCreateWithHexData_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Void>)>>(
+    'TWStringCreateWithHexData',
+  );
+  static final _dart_TWStringCreateWithHexData _TWStringCreateWithHexData =
+      _TWStringCreateWithHexData_ptr.asFunction<
+          _dart_TWStringCreateWithHexData>();
 
   /// Returns the string size in bytes.
   ///
@@ -63,8 +78,10 @@ class TWString {
     );
   }
 
-  static late final _TWStringSize_ptr = _lookup<NativeFunction<_c_TWStringSize>>('TWStringSize');
-  static late final _dart_TWStringSize _TWStringSize = _TWStringSize_ptr.asFunction<_dart_TWStringSize>();
+  static final _TWStringSize_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Utf8>)>>('TWStringSize');
+  static final _dart_TWStringSize _TWStringSize =
+      _TWStringSize_ptr.asFunction<_dart_TWStringSize>();
 
   /// Returns the byte at the provided index.
   ///
@@ -80,8 +97,11 @@ class TWString {
     );
   }
 
-  static late final _TWStringGet_ptr = _lookup<NativeFunction<_c_TWStringGet>>('TWStringGet');
-  static late final _dart_TWStringGet _TWStringGet = _TWStringGet_ptr.asFunction<_dart_TWStringGet>();
+  static final _TWStringGet_ptr =
+      lookup<NativeFunction<Int8 Function(Pointer<Utf8>, Int32)>>(
+          'TWStringGet');
+  static final _dart_TWStringGet _TWStringGet =
+      _TWStringGet_ptr.asFunction<_dart_TWStringGet>();
 
   /// Returns the raw pointer to the string's UTF8 bytes (null-terminated).
   ///
@@ -94,8 +114,11 @@ class TWString {
     );
   }
 
-  static late final _TWStringUTF8Bytes_ptr = _lookup<NativeFunction<_c_TWStringUTF8Bytes>>('TWStringUTF8Bytes');
-  static late final _dart_TWStringUTF8Bytes _TWStringUTF8Bytes = _TWStringUTF8Bytes_ptr.asFunction<_dart_TWStringUTF8Bytes>();
+  static final _TWStringUTF8Bytes_ptr =
+      lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Utf8>)>>(
+          'TWStringUTF8Bytes');
+  static final _dart_TWStringUTF8Bytes _TWStringUTF8Bytes =
+      _TWStringUTF8Bytes_ptr.asFunction<_dart_TWStringUTF8Bytes>();
 
   /// Deletes a string created with a `TWStringCreate*` method and frees the memory.
   ///
@@ -108,8 +131,10 @@ class TWString {
     );
   }
 
-  static late final _TWStringDelete_ptr = _lookup<NativeFunction<_c_TWStringDelete>>('TWStringDelete');
-  static late final _dart_TWStringDelete _TWStringDelete = _TWStringDelete_ptr.asFunction<_dart_TWStringDelete>();
+  static final _TWStringDelete_ptr =
+      lookup<NativeFunction<Void Function(Pointer<Utf8>)>>('TWStringDelete');
+  static final _dart_TWStringDelete _TWStringDelete =
+      _TWStringDelete_ptr.asFunction<_dart_TWStringDelete>();
 
   /// Determines whether two string blocks are equal.
   ///
@@ -125,21 +150,15 @@ class TWString {
     );
   }
 
-  static late final _TWStringEqual_ptr = _lookup<NativeFunction<_c_TWStringEqual>>('TWStringEqual');
-  static late final _dart_TWStringEqual _TWStringEqual = _TWStringEqual_ptr.asFunction<_dart_TWStringEqual>();
+  static final _TWStringEqual_ptr =
+      lookup<NativeFunction<Int32 Function(Pointer<Utf8>, Pointer<Utf8>)>>(
+          'TWStringEqual');
+  static final _dart_TWStringEqual _TWStringEqual =
+      _TWStringEqual_ptr.asFunction<_dart_TWStringEqual>();
 }
-
-typedef _c_TWStringCreateWithUTF8Bytes = Pointer<Utf8> Function(
-  Pointer<Utf8> bytes,
-);
 
 typedef _dart_TWStringCreateWithUTF8Bytes = Pointer<Utf8> Function(
   Pointer<Utf8> bytes,
-);
-
-typedef _c_TWStringCreateWithRawBytes = Pointer<Utf8> Function(
-  Pointer<Uint8> bytes,
-  Int32 size,
 );
 
 typedef _dart_TWStringCreateWithRawBytes = Pointer<Utf8> Function(
@@ -147,25 +166,12 @@ typedef _dart_TWStringCreateWithRawBytes = Pointer<Utf8> Function(
   int size,
 );
 
-typedef _c_TWStringCreateWithHexData = Pointer<Utf8> Function(
-  Pointer<Void> data,
-);
-
 typedef _dart_TWStringCreateWithHexData = Pointer<Utf8> Function(
   Pointer<Void> data,
 );
 
-typedef _c_TWStringSize = Int32 Function(
-  Pointer<Utf8> string,
-);
-
 typedef _dart_TWStringSize = int Function(
   Pointer<Utf8> string,
-);
-
-typedef _c_TWStringGet = Int8 Function(
-  Pointer<Utf8> string,
-  Int32 index,
 );
 
 typedef _dart_TWStringGet = int Function(
@@ -173,25 +179,12 @@ typedef _dart_TWStringGet = int Function(
   int index,
 );
 
-typedef _c_TWStringUTF8Bytes = Pointer<Utf8> Function(
-  Pointer<Utf8> string,
-);
-
 typedef _dart_TWStringUTF8Bytes = Pointer<Utf8> Function(
-  Pointer<Utf8> string,
-);
-
-typedef _c_TWStringDelete = Void Function(
   Pointer<Utf8> string,
 );
 
 typedef _dart_TWStringDelete = void Function(
   Pointer<Utf8> string,
-);
-
-typedef _c_TWStringEqual = Int32 Function(
-  Pointer<Utf8> lhs,
-  Pointer<Utf8> rhs,
 );
 
 typedef _dart_TWStringEqual = int Function(

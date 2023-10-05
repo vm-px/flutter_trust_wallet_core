@@ -1,5 +1,3 @@
-part of trust_wallet_core_ffi;
-
 abstract class TWBlockchain {
   static const int TWBlockchainBitcoin = 0;
   static const int TWBlockchainEthereum = 1;

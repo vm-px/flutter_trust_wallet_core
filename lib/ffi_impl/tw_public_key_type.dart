@@ -1,5 +1,3 @@
-part of trust_wallet_core_ffi;
-
 /// Public key types
 class TWPublicKeyType {
   static const int TWPublicKeyTypeSECP256k1 = 0;

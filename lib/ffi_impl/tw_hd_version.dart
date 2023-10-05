@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Registered HD version bytes
 ///
@@ -41,8 +41,10 @@ abstract class TWHDVersion {
     );
   }
 
-  static late final _TWHDVersionIsPublic_ptr = _lookup<NativeFunction<_c_TWHDVersionIsPublic>>('TWHDVersionIsPublic');
-  static late final _dart_TWHDVersionIsPublic _TWHDVersionIsPublic = _TWHDVersionIsPublic_ptr.asFunction<_dart_TWHDVersionIsPublic>();
+  static final _TWHDVersionIsPublic_ptr =
+      lookup<NativeFunction<Int32 Function(Int32)>>('TWHDVersionIsPublic');
+  static final _dart_TWHDVersionIsPublic _TWHDVersionIsPublic =
+      _TWHDVersionIsPublic_ptr.asFunction<_dart_TWHDVersionIsPublic>();
 
   static int TWHDVersionIsPrivate(
     int version,
@@ -52,20 +54,14 @@ abstract class TWHDVersion {
     );
   }
 
-  static late final _TWHDVersionIsPrivate_ptr = _lookup<NativeFunction<_c_TWHDVersionIsPrivate>>('TWHDVersionIsPrivate');
-  static late final _dart_TWHDVersionIsPrivate _TWHDVersionIsPrivate = _TWHDVersionIsPrivate_ptr.asFunction<_dart_TWHDVersionIsPrivate>();
+  static final _TWHDVersionIsPrivate_ptr =
+      lookup<NativeFunction<Int32 Function(Int32)>>('TWHDVersionIsPrivate');
+  static final _dart_TWHDVersionIsPrivate _TWHDVersionIsPrivate =
+      _TWHDVersionIsPrivate_ptr.asFunction<_dart_TWHDVersionIsPrivate>();
 }
-
-typedef _c_TWHDVersionIsPublic = Int32 Function(
-  Int32 version,
-);
 
 typedef _dart_TWHDVersionIsPublic = int Function(
   int version,
-);
-
-typedef _c_TWHDVersionIsPrivate = Int32 Function(
-  Int32 version,
 );
 
 typedef _dart_TWHDVersionIsPrivate = int Function(

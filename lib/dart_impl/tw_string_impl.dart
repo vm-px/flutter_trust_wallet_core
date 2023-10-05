@@ -1,6 +1,8 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
 class TWStringImpl extends TWString {
+  TWStringImpl();
+
   /// It must be deleted at the end.
   static Pointer<Utf8> toTWString(String value) {
     return TWString.TWStringCreateWithUTF8Bytes(value.toNativeUtf8());

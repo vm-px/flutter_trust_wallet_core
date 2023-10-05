@@ -1,4 +1,4 @@
-part of flutter_trust_wallet_core;
+import './core_imports.dart';
 
 class CoinTypeConfiguration {
   late Pointer<Void> _pointer;

@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+
 
 // class TWPurposeImpl extends TWPurpose {
 //   static const int TWPurposeBIP44 = 44;

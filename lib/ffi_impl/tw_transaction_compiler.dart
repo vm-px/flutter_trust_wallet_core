@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// Non-core transaction utility methods, like building a transaction using an external signature.
 class TWTransactionCompiler {
@@ -25,10 +25,23 @@ class TWTransactionCompiler {
     );
   }
 
-  static late final _TWTransactionCompilerBuildInput_ptr = _lookup<NativeFunction<_c_TWTransactionCompilerBuildInput>>('TWTransactionCompilerBuildInput');
+  static final _TWTransactionCompilerBuildInput_ptr = lookup<
+      NativeFunction<
+          Pointer<Void> Function(
+    Int32,
+    Pointer<Utf8>,
+    Pointer<Utf8>,
+    Pointer<Utf8>,
+    Pointer<Utf8>,
+    Pointer<Utf8>,
+    Pointer<Utf8>,
+  )>>(
+    'TWTransactionCompilerBuildInput',
+  );
 
-  static late final _dart_TWTransactionCompilerBuildInput _TWTransactionCompilerBuildInput =
-      _TWTransactionCompilerBuildInput_ptr.asFunction<_dart_TWTransactionCompilerBuildInput>();
+  static final _dart_TWTransactionCompilerBuildInput
+      _TWTransactionCompilerBuildInput = _TWTransactionCompilerBuildInput_ptr
+          .asFunction<_dart_TWTransactionCompilerBuildInput>();
 
   /// Obtains pre-signing hashes of a transaction.
   ///
@@ -47,10 +60,15 @@ class TWTransactionCompiler {
     );
   }
 
-  static late final _TWTransactionCompilerPreImageHashes_ptr = _lookup<NativeFunction<_c_TWTransactionCompilerPreImageHashes>>('TWTransactionCompilerPreImageHashes');
+  static final _TWTransactionCompilerPreImageHashes_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Int32, Pointer<Void>)>>(
+    'TWTransactionCompilerPreImageHashes',
+  );
 
-  static late final _dart_TWTransactionCompilerPreImageHashes _TWTransactionCompilerPreImageHashes =
-      _TWTransactionCompilerPreImageHashes_ptr.asFunction<_dart_TWTransactionCompilerPreImageHashes>();
+  static final _dart_TWTransactionCompilerPreImageHashes
+      _TWTransactionCompilerPreImageHashes =
+      _TWTransactionCompilerPreImageHashes_ptr.asFunction<
+          _dart_TWTransactionCompilerPreImageHashes>();
 
   /// Compiles a complete transation with one or more external signatures.
   ///
@@ -76,22 +94,22 @@ class TWTransactionCompiler {
     );
   }
 
-  static late final _TWTransactionCompilerCompileWithSignatures_ptr =
-      _lookup<NativeFunction<_c_TWTransactionCompilerCompileWithSignatures>>('TWTransactionCompilerCompileWithSignatures');
+  static final _TWTransactionCompilerCompileWithSignatures_ptr = lookup<
+      NativeFunction<
+          Pointer<Void> Function(
+    Int32,
+    Pointer<Void>,
+    Pointer<Void>,
+    Pointer<Void>,
+  )>>(
+    'TWTransactionCompilerCompileWithSignatures',
+  );
 
-  static late final _dart_TWTransactionCompilerCompileWithSignatures _TWTransactionCompilerCompileWithSignatures =
-      _TWTransactionCompilerCompileWithSignatures_ptr.asFunction<_dart_TWTransactionCompilerCompileWithSignatures>();
+  static final _dart_TWTransactionCompilerCompileWithSignatures
+      _TWTransactionCompilerCompileWithSignatures =
+      _TWTransactionCompilerCompileWithSignatures_ptr.asFunction<
+          _dart_TWTransactionCompilerCompileWithSignatures>();
 }
-
-typedef _c_TWTransactionCompilerBuildInput = Pointer<Void> Function(
-  Int32 coinType,
-  Pointer<Utf8> from,
-  Pointer<Utf8> to,
-  Pointer<Utf8> amount,
-  Pointer<Utf8> asset,
-  Pointer<Utf8> memo,
-  Pointer<Utf8> chainIf,
-);
 
 typedef _dart_TWTransactionCompilerBuildInput = Pointer<Void> Function(
   int coinType,
@@ -103,23 +121,13 @@ typedef _dart_TWTransactionCompilerBuildInput = Pointer<Void> Function(
   Pointer<Utf8> chainIf,
 );
 
-typedef _c_TWTransactionCompilerPreImageHashes = Pointer<Void> Function(
-  Int32 coinType,
-  Pointer<Void> txInputData,
-);
-
 typedef _dart_TWTransactionCompilerPreImageHashes = Pointer<Void> Function(
   int coinType,
   Pointer<Void> txInputData,
 );
-typedef _c_TWTransactionCompilerCompileWithSignatures = Pointer<Void> Function(
-  Int32 coinType,
-  Pointer<Void> txInputData,
-  Pointer<Void> signatures,
-  Pointer<Void> publicKeys,
-);
 
-typedef _dart_TWTransactionCompilerCompileWithSignatures = Pointer<Void> Function(
+typedef _dart_TWTransactionCompilerCompileWithSignatures = Pointer<Void>
+    Function(
   int coinType,
   Pointer<Void> txInputData,
   Pointer<Void> signatures,

@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 /// THORChain swap functions
 class TWTHORChainSwap {
@@ -13,14 +13,15 @@ class TWTHORChainSwap {
     );
   }
 
-  static late final _TWTHORChainSwapBuildSwap_ptr = _lookup<NativeFunction<_c_TWTHORChainSwapBuildSwap>>('TWTHORChainSwapBuildSwap');
+  static final _TWTHORChainSwapBuildSwap_ptr =
+      lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>)>>(
+    'TWTHORChainSwapBuildSwap',
+  );
 
-  static late final _dart_TWTHORChainSwapBuildSwap _TWTHORChainSwapBuildSwap = _TWTHORChainSwapBuildSwap_ptr.asFunction<_dart_TWTHORChainSwapBuildSwap>();
+  static final _dart_TWTHORChainSwapBuildSwap _TWTHORChainSwapBuildSwap =
+      _TWTHORChainSwapBuildSwap_ptr.asFunction<
+          _dart_TWTHORChainSwapBuildSwap>();
 }
-
-typedef _c_TWTHORChainSwapBuildSwap = Pointer<Void> Function(
-  Pointer<Void> input,
-);
 
 typedef _dart_TWTHORChainSwapBuildSwap = Pointer<Void> Function(
   Pointer<Void> input,

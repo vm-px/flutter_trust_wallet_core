@@ -1,4 +1,4 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
 class TWBitcoinScriptImpl extends TWBitcoinScript {
   static Pointer<Void> create() {
@@ -6,7 +6,8 @@ class TWBitcoinScriptImpl extends TWBitcoinScript {
   }
 
   static Pointer<Void> createWithData(Uint8List bytes) {
-    final _data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final _data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
     final script = TWBitcoinScript.TWBitcoinScriptCreateWithData(_data);
     TWData.TWDataDelete(_data);
     return script;
@@ -21,43 +22,52 @@ class TWBitcoinScriptImpl extends TWBitcoinScript {
   }
 
   static Pointer<Void> buildPayToPublicKey(Uint8List bytes) {
-    final _data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final _data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
     final script = TWBitcoinScript.TWBitcoinScriptBuildPayToPublicKey(_data);
     TWData.TWDataDelete(_data);
     return script;
   }
 
   static Pointer<Void> buildPayToPublicKeyHash(Uint8List bytes) {
-    final _data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
-    final script = TWBitcoinScript.TWBitcoinScriptBuildPayToPublicKeyHash(_data);
+    final _data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final script =
+        TWBitcoinScript.TWBitcoinScriptBuildPayToPublicKeyHash(_data);
     TWData.TWDataDelete(_data);
     return script;
   }
 
   static Pointer<Void> buildPayToScriptHash(Uint8List bytes) {
-    final _data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final _data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
     final script = TWBitcoinScript.TWBitcoinScriptBuildPayToScriptHash(_data);
     TWData.TWDataDelete(_data);
     return script;
   }
 
   static Pointer<Void> buildPayToWitnessPubkeyHash(Uint8List bytes) {
-    final _data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
-    final script = TWBitcoinScript.TWBitcoinScriptBuildPayToWitnessPubkeyHash(_data);
+    final _data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final script =
+        TWBitcoinScript.TWBitcoinScriptBuildPayToWitnessPubkeyHash(_data);
     TWData.TWDataDelete(_data);
     return script;
   }
 
   static Pointer<Void> buildPayToWitnessScriptHash(Uint8List bytes) {
-    final _data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
-    final script = TWBitcoinScript.TWBitcoinScriptBuildPayToWitnessScriptHash(_data);
+    final _data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final script =
+        TWBitcoinScript.TWBitcoinScriptBuildPayToWitnessScriptHash(_data);
     TWData.TWDataDelete(_data);
     return script;
   }
 
   static Pointer<Void> lockScriptForAddress(String string, int coin) {
     final _string = TWStringImpl.toTWString(string);
-    final script = TWBitcoinScript.TWBitcoinScriptLockScriptForAddress(_string, coin);
+    final script =
+        TWBitcoinScript.TWBitcoinScriptLockScriptForAddress(_string, coin);
     TWStringImpl.delete(_string);
     return script;
   }
@@ -89,7 +99,8 @@ class TWBitcoinScriptImpl extends TWBitcoinScript {
   }
 
   static bool isPayToWitnessPublicKeyHash(Pointer<Void> script) {
-    return TWBitcoinScript.TWBitcoinScriptIsPayToWitnessPublicKeyHash(script) >= 1;
+    return TWBitcoinScript.TWBitcoinScriptIsPayToWitnessPublicKeyHash(script) >=
+        1;
   }
 
   static bool isWitnessProgram(Pointer<Void> script) {
@@ -116,12 +127,14 @@ class TWBitcoinScriptImpl extends TWBitcoinScript {
   }
 
   static Uint8List matchPayToWitnessPublicKeyHash(Pointer<Void> script) {
-    final _data = TWBitcoinScript.TWBitcoinScriptMatchPayToWitnessPublicKeyHash(script);
+    final _data =
+        TWBitcoinScript.TWBitcoinScriptMatchPayToWitnessPublicKeyHash(script);
     return TWData.TWDataBytes(script).asTypedList(TWData.TWDataSize(_data));
   }
 
   static Uint8List matchPayToWitnessScriptHash(Pointer<Void> script) {
-    final _data = TWBitcoinScript.TWBitcoinScriptMatchPayToWitnessScriptHash(script);
+    final _data =
+        TWBitcoinScript.TWBitcoinScriptMatchPayToWitnessScriptHash(script);
     return TWData.TWDataBytes(script).asTypedList(TWData.TWDataSize(_data));
   }
 

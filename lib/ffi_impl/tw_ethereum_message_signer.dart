@@ -1,6 +1,8 @@
-part of trust_wallet_core_ffi;
+import './ffi_impl_imports.dart';
 
 abstract class TWEthereumMessageSigner {
+  TWEthereumMessageSigner._();
+
   /// Sign a typed message EIP-712 V4.
   ///
   /// \param privateKey: the private key used for signing
@@ -16,7 +18,7 @@ abstract class TWEthereumMessageSigner {
     );
   }
 
-  static final _TWEthereumMessageSignerSignTypedMessagePtr = _lookup<
+  static final _TWEthereumMessageSignerSignTypedMessagePtr = lookup<
       NativeFunction<Pointer<Utf8> Function(Pointer<Void>, Pointer<Utf8>)>>(
     'TWEthereumMessageSignerSignTypedMessage',
   );
@@ -42,7 +44,7 @@ abstract class TWEthereumMessageSigner {
     );
   }
 
-  static final _TWEthereumMessageSignerSignTypedMessageEip155Ptr = _lookup<
+  static final _TWEthereumMessageSignerSignTypedMessageEip155Ptr = lookup<
       NativeFunction<
           Pointer<Utf8> Function(
     Pointer<Void>,
@@ -68,7 +70,7 @@ abstract class TWEthereumMessageSigner {
     );
   }
 
-  static final _TWEthereumMessageSignerSignMessagePtr = _lookup<
+  static final _TWEthereumMessageSignerSignMessagePtr = lookup<
       NativeFunction<Pointer<Utf8> Function(Pointer<Void>, Pointer<Utf8>)>>(
     'TWEthereumMessageSignerSignMessage',
   );
@@ -91,7 +93,7 @@ abstract class TWEthereumMessageSigner {
     );
   }
 
-  static final _TWEthereumMessageSignerSignMessageImmutableXPtr = _lookup<
+  static final _TWEthereumMessageSignerSignMessageImmutableXPtr = lookup<
       NativeFunction<Pointer<Utf8> Function(Pointer<Void>, Pointer<Utf8>)>>(
     'TWEthereumMessageSignerSignMessageImmutableX',
   );
@@ -117,7 +119,7 @@ abstract class TWEthereumMessageSigner {
     );
   }
 
-  static final _TWEthereumMessageSignerSignMessageEip155Ptr = _lookup<
+  static final _TWEthereumMessageSignerSignMessageEip155Ptr = lookup<
       NativeFunction<
           Pointer<Utf8> Function(
     Pointer<Void>,
@@ -146,7 +148,7 @@ abstract class TWEthereumMessageSigner {
     );
   }
 
-  static final _TWEthereumMessageSignerVerifyMessagePtr = _lookup<
+  static final _TWEthereumMessageSignerVerifyMessagePtr = lookup<
       NativeFunction<
           Bool Function(
     Pointer<Void>,

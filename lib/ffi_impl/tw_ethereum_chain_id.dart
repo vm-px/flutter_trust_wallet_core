@@ -1,5 +1,3 @@
-part of trust_wallet_core_ffi;
-
 /// Chain identifier for Ethereum-based blockchains.
 abstract class TWEthereumChainID {
   static const int TWEthereumChainIDEthereum = 1;

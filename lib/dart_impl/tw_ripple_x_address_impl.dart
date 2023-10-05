@@ -1,15 +1,17 @@
-part of trust_wallet_core_ffi;
+import './dart_impl_imports.dart';
 
 class TWRippleXAddressImpl extends TWRippleXAddress {
   static Pointer<Void> createWithString(String string) {
     final _string = TWStringImpl.toTWString(string);
-    final rippleXAddress = TWRippleXAddress.TWRippleXAddressCreateWithString(_string);
+    final rippleXAddress =
+        TWRippleXAddress.TWRippleXAddressCreateWithString(_string);
     TWStringImpl.delete(_string);
     return rippleXAddress;
   }
 
   static Pointer<Void> createWithPublicKey(Pointer<Void> publicKey, int tag) {
-    final rippleXAddress = TWRippleXAddress.TWRippleXAddressCreateWithPublicKey(publicKey, tag);
+    final rippleXAddress =
+        TWRippleXAddress.TWRippleXAddressCreateWithPublicKey(publicKey, tag);
     return rippleXAddress;
   }
 
@@ -26,7 +28,8 @@ class TWRippleXAddressImpl extends TWRippleXAddress {
   }
 
   static String description(Pointer<Void> address) {
-    return TWStringImpl.toDartString(TWRippleXAddress.TWRippleXAddressDescription(address));
+    return TWStringImpl.toDartString(
+        TWRippleXAddress.TWRippleXAddressDescription(address));
   }
 
   static void delete(Pointer<Void> address) {
