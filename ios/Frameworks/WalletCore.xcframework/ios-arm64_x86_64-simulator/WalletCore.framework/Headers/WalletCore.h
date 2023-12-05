@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -22,10 +22,13 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWAESPaddingMode.h"
 #include "TWAccount.h"
 #include "TWAnyAddress.h"
+#include "TWAsnParser.h"
+#include "TWBarz.h"
 #include "TWBase32.h"
 #include "TWBase58.h"
 #include "TWBase64.h"
 #include "TWBitcoinAddress.h"
+#include "TWBitcoinFee.h"
 #include "TWBitcoinMessageSigner.h"
 #include "TWBitcoinScript.h"
 #include "TWBitcoinSigHashType.h"
@@ -45,11 +48,14 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWEthereumChainID.h"
 #include "TWEthereumMessageSigner.h"
 #include "TWFIOAccount.h"
+#include "TWFilecoinAddressConverter.h"
+#include "TWFilecoinAddressType.h"
 #include "TWGroestlcoinAddress.h"
 #include "TWHDVersion.h"
 #include "TWHDWallet.h"
 #include "TWHRP.h"
 #include "TWHash.h"
+#include "TWLiquidStaking.h"
 #include "TWMnemonic.h"
 #include "TWNEARAccount.h"
 #include "TWNervosAddress.h"
@@ -75,3 +81,4 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWTezosMessageSigner.h"
 #include "TWTransactionCompiler.h"
 #include "TWTronMessageSigner.h"
+#include "TWWebAuthn.h"
