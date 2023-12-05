@@ -18,11 +18,19 @@
 		</data>
 		<key>Headers/TWAnyAddress.h</key>
 		<data>
-		iPWFCru9wKb0YIjZrQl+FljvFCs=
+		bgOPrwAjQFF41B7oFT7aoDXdHyw=
 		</data>
 		<key>Headers/TWAnySigner.h</key>
 		<data>
 		mwlqG7IwN7M5qCf4kTpFMs/hyNE=
+		</data>
+		<key>Headers/TWAsnParser.h</key>
+		<data>
+		iaP/CZxE/WhsWLCCAN4oKvhClso=
+		</data>
+		<key>Headers/TWBarz.h</key>
+		<data>
+		kC2C7+g23E9+Ut4+SmxUUn2m8Xo=
 		</data>
 		<key>Headers/TWBase.h</key>
 		<data>
@@ -44,13 +52,17 @@
 		<data>
 		dVSL5aymT/hWnWZvjNfKzb76PlE=
 		</data>
+		<key>Headers/TWBitcoinFee.h</key>
+		<data>
+		2uAP5BUx5/gO9xwM6TyoMJWjUBI=
+		</data>
 		<key>Headers/TWBitcoinMessageSigner.h</key>
 		<data>
 		lnHOSCUQL6RHOvZZsyfsCPscDn4=
 		</data>
 		<key>Headers/TWBitcoinScript.h</key>
 		<data>
-		HzrVY6P9zsvgAn89Ns4JwVUGfxM=
+		rlM5UMdZJUJASxki3JNpBYtK3TA=
 		</data>
 		<key>Headers/TWBitcoinSigHashType.h</key>
 		<data>
@@ -58,15 +70,15 @@
 		</data>
 		<key>Headers/TWBlockchain.h</key>
 		<data>
-		qz3ytwjx4hLCjPX4PLYbUvzAMXo=
+		5gan4wXs/DBJBuJW2ZXwUwQAQTo=
 		</data>
 		<key>Headers/TWCardano.h</key>
 		<data>
-		qLklgkigEyBO/fXz0LfPD9s6HOc=
+		pjGDlTk9l66UHhT8RsESDxn3xoE=
 		</data>
 		<key>Headers/TWCoinType.h</key>
 		<data>
-		IpIJk/RnaVrDfbJblCI5p8hm0SI=
+		zz95EB9mG/5dk9bwkH5d20w0adQ=
 		</data>
 		<key>Headers/TWCoinTypeConfiguration.h</key>
 		<data>
@@ -86,11 +98,11 @@
 		</data>
 		<key>Headers/TWDerivation.h</key>
 		<data>
-		hyJLOWqptAQhSMuPg44ILHEIz7g=
+		Clk6G8XnsiU1VmIpuB+2qY1MhwY=
 		</data>
 		<key>Headers/TWDerivationPath.h</key>
 		<data>
-		i4J9OTO7P9cs6XE7gLOk1+7d9Tg=
+		BRuD6pm1iQJ5FrYoJ+jGdlCqy7Q=
 		</data>
 		<key>Headers/TWDerivationPathIndex.h</key>
 		<data>
@@ -98,7 +110,7 @@
 		</data>
 		<key>Headers/TWEthereum.h</key>
 		<data>
-		1AsPHaLL4ZYDZpKxTOubahq6H8I=
+		kJnt+1wrFF0qraEc3Jw6ElyAHrY=
 		</data>
 		<key>Headers/TWEthereumAbi.h</key>
 		<data>
@@ -114,7 +126,7 @@
 		</data>
 		<key>Headers/TWEthereumChainID.h</key>
 		<data>
-		bAXeFc4DfxFUiaKmhcb8S/3vDC4=
+		Xv6WAZ1jC+XvAshx/iOp00L15Q0=
 		</data>
 		<key>Headers/TWEthereumMessageSigner.h</key>
 		<data>
@@ -124,25 +136,37 @@
 		<data>
 		qFmB7s2aygBPfRnxqBp90fvWiWU=
 		</data>
+		<key>Headers/TWFilecoinAddressConverter.h</key>
+		<data>
+		AsR0jeJeFd2L/51YGOtsDyqpiBQ=
+		</data>
+		<key>Headers/TWFilecoinAddressType.h</key>
+		<data>
+		vKFvIhEQR7QbzESxyfgbh5V1FA4=
+		</data>
 		<key>Headers/TWGroestlcoinAddress.h</key>
 		<data>
 		kL+YkUtsxMsfhZz3kk+u+ovYzQE=
 		</data>
 		<key>Headers/TWHDVersion.h</key>
 		<data>
-		NpYDaBSaoEz7DrrQ1QWBvOXv8Uc=
+		DfuRPzjL4x7gWNQVLkqS3R9zKeQ=
 		</data>
 		<key>Headers/TWHDWallet.h</key>
 		<data>
-		UTdcB1iYUMOHZoc64hr+P/YE/VA=
+		+bES4MEP5Zv+9NBi7L/gT2F+xUo=
 		</data>
 		<key>Headers/TWHRP.h</key>
 		<data>
-		/0GKY1RUiQX1bVDz5eSzV983iOs=
+		aI3nJ5tpagRAG/QKaXRb3hA3Axg=
 		</data>
 		<key>Headers/TWHash.h</key>
 		<data>
-		AbeOZwGFbltYnGXonbcNGlj1MEQ=
+		biOfdkPtOpO1zjdZ9K/o635KgB0=
+		</data>
+		<key>Headers/TWLiquidStaking.h</key>
+		<data>
+		GEBHtKUhuih86+zPgcigmVZHv8A=
 		</data>
 		<key>Headers/TWMnemonic.h</key>
 		<data>
@@ -162,7 +186,7 @@
 		</data>
 		<key>Headers/TWPrivateKey.h</key>
 		<data>
-		uX0soWovDIpPf3pA5OGLRT8Ou/Y=
+		3TbV3W8qBMoTE9SrHl2Wxc0no0k=
 		</data>
 		<key>Headers/TWPrivateKeyType.h</key>
 		<data>
@@ -242,11 +266,15 @@
 		</data>
 		<key>Headers/TWTransactionCompiler.h</key>
 		<data>
-		FDpDMGPnTJ1bJzlmq8fewm465PI=
+		NXglF5pbKEuOBfKTJe1yup02wLQ=
 		</data>
 		<key>Headers/TWTronMessageSigner.h</key>
 		<data>
 		TWecCg/TDNfiCTc/lXmqmayPEVY=
+		</data>
+		<key>Headers/TWWebAuthn.h</key>
+		<data>
+		+aJjFjQPfdb2tGuXiRqvghVow1U=
 		</data>
 		<key>Headers/WalletCore-Swift.h</key>
 		<data>
@@ -254,51 +282,51 @@
 		</data>
 		<key>Headers/WalletCore.h</key>
 		<data>
-		WPqyNTwkm1472y959731n7Pa8Tc=
+		XoHWxXIY7jyTa85m4bYTsztX/yU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/yzatdawpbtDy5+9KkmS6yCTa+Q=
+		g+4/2uNnFoxp+GYGJWdrdOnujJs=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		LVv7xQ3R142/ONPvZyyZQez7nww=
+		mRpsY5XEkWYXC7jbdboxx9flBwo=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		u38xzZHpqX96o/FH/5J0U6XB0Ek=
+		n4KoTCXvFGkVEefY0jRPGIUd6q4=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		tCLGR803A4Qnox3NTDt4LjwShkg=
+		TfFjc03arkBbvdEwPpkO+8XP2II=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		u38xzZHpqX96o/FH/5J0U6XB0Ek=
+		n4KoTCXvFGkVEefY0jRPGIUd6q4=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XjqLECq0b5FAx+lm9B2OnZvx4Es=
+		UDL2Npx46dI1pDGmdy8B5JtW68w=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		LVv7xQ3R142/ONPvZyyZQez7nww=
+		mRpsY5XEkWYXC7jbdboxx9flBwo=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		TRg7UYlG1HS4Iox67dn3G5NXX34=
+		r3ZqQJ0+YjU+QCn4cih/WMradPk=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		1cWYUCUVrl+iAO1BlZWr4XXt2S8=
+		SeOwfELV68k5WmWyL2UQQyigZ5c=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TRg7UYlG1HS4Iox67dn3G5NXX34=
+		r3ZqQJ0+YjU+QCn4cih/WMradPk=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		B7So/EJVawF4NIkVYTuTu5DfSzc=
+		UsUDLNbA3IaX+EhwDzX77c+4rRk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -332,7 +360,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cwhIDpRpApzKSeN3b+trPz5/MVzAtOtj0ALdovm+3Bs=
+			OHcjW6hA9RXSqpHRc8xmay2oddFNzcOxLrUSUXuxob0=
 			</data>
 		</dict>
 		<key>Headers/TWAnySigner.h</key>
@@ -340,6 +368,20 @@
 			<key>hash2</key>
 			<data>
 			tMQj7Q+Hc3zbYvn5/beKPs5pGHT5Rt6vEzJjefnNGVY=
+			</data>
+		</dict>
+		<key>Headers/TWAsnParser.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wbp844+Y8WtnAKuSWo88yYsdm3+QVfxS2FtorjRW8EM=
+			</data>
+		</dict>
+		<key>Headers/TWBarz.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/SJL9tvgZDtp1mdCfAs+9OcU6cNn6CfRTX8leUCSmtI=
 			</data>
 		</dict>
 		<key>Headers/TWBase.h</key>
@@ -377,6 +419,13 @@
 			BEka/bmRhZTX6hJlXzSEchVzMo2A6YcT2AlRfyUCJHg=
 			</data>
 		</dict>
+		<key>Headers/TWBitcoinFee.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8rwQ3rV36J65hJRSxglvsvUcTDYpQkt4rvR2emtH58s=
+			</data>
+		</dict>
 		<key>Headers/TWBitcoinMessageSigner.h</key>
 		<dict>
 			<key>hash2</key>
@@ -388,7 +437,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OTXTeuS/IXbpYyRdVTr3ZuU6nczJniaEFNtskdep1fc=
+			EY+ZVlymthFefut1xN58mWRZtCqD8jujJGoJI1Bjn0w=
 			</data>
 		</dict>
 		<key>Headers/TWBitcoinSigHashType.h</key>
@@ -402,21 +451,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yFjsxI0QC4ootbWUJYODIG1MvQykNXcTz60/sbZk1/A=
+			wbM/i/qAMyAi0K6iX22uSyOCMWN4PUcG2MwKlJU0quY=
 			</data>
 		</dict>
 		<key>Headers/TWCardano.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZlDfbGdKsqjXH0GxN8EVBu2v5x64OMqnLKXBzsdOubk=
+			7NLVXJIIlNm40ZQUEHgdVX0RdS0wDbcbkxP7l6aBGs8=
 			</data>
 		</dict>
 		<key>Headers/TWCoinType.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+B6nhfPyT/ZiHtVIzqRE+4xsJ+ksQjyAYqB4dYLSGYs=
+			o6vnrJb9jcPanP/gPz1jvseRrcZ5slV6EDy/x8HghaE=
 			</data>
 		</dict>
 		<key>Headers/TWCoinTypeConfiguration.h</key>
@@ -451,14 +500,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZCxAhB8m5pFKxJC+VG7GMZpsx+Ny0uR3fxKK2ITqARE=
+			zpVUBukB6PjjVP0f9wwXs5IeMlAZcbju25t6YOTgUmA=
 			</data>
 		</dict>
 		<key>Headers/TWDerivationPath.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Kei7SIjTajPir4wxcOA578DmMKd7ppuMWzAAc3AnCFs=
+			alH4jYHuRDjglaHHqf6K56/mc4T1SYhZI1F/TMr8Tno=
 			</data>
 		</dict>
 		<key>Headers/TWDerivationPathIndex.h</key>
@@ -472,7 +521,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GHj8tj+0Al3AOjECL99W3jzndPmW3vEGZk5lFyByqZU=
+			NmFkETOAtMMIY+t8khTnUDuoSZRUIfuZOFqfCRVYGGQ=
 			</data>
 		</dict>
 		<key>Headers/TWEthereumAbi.h</key>
@@ -500,7 +549,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vqopy02QUO8qjShBLCjUwsbTM8xZQrufk5mmFqaOWEo=
+			EZWfBJfErXVYqggcDHpiQOpVUM1DhMRBxBu5VHy8t6g=
 			</data>
 		</dict>
 		<key>Headers/TWEthereumMessageSigner.h</key>
@@ -517,6 +566,20 @@
 			BSNGFF4vtemsqQcsfa9f0o1MTlttLv8HF2WmwMsx7vk=
 			</data>
 		</dict>
+		<key>Headers/TWFilecoinAddressConverter.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			STE+RrLLxZbk4NMXxPVZ+Bla4cSD20GiG9RGFO5Pn0s=
+			</data>
+		</dict>
+		<key>Headers/TWFilecoinAddressType.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BidFynFScp1MfKFooeE+1zgAo46sgqASd1mGm3rLBSo=
+			</data>
+		</dict>
 		<key>Headers/TWGroestlcoinAddress.h</key>
 		<dict>
 			<key>hash2</key>
@@ -528,28 +591,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DQkfFhyKumNXaaztqnKFxfR8+4CxoT9KZ87CKKwBfr8=
+			48nn6tjbhaIy83iY40XbmkbU+HX4KG+FYiYbN686MSg=
 			</data>
 		</dict>
 		<key>Headers/TWHDWallet.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jEexD0VPtO+xxqD6fdHCQLy14SXAP2qzMk9NBWWs1No=
+			PZkEGXQjeR4rCjE9SYNCbQVsZU28s0y1uS89os47FEE=
 			</data>
 		</dict>
 		<key>Headers/TWHRP.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0GxoU4Yf5ENI+m+3cwop7qQRYAqX8ml2WkOrX8vNFeo=
+			4li7iB7nmoY1r/161au8SI2z9DHNWEOjjorV7O29zTE=
 			</data>
 		</dict>
 		<key>Headers/TWHash.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4WlHc3pMlprvldBiRut+QI/lYUCenavgG3ouUlHxidc=
+			CY3Sw9z+0HbBBUM5Eyw0UIn7pZMLKCRLpK1HvvEL1hM=
+			</data>
+		</dict>
+		<key>Headers/TWLiquidStaking.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9N4iDXI24wXhuhvG1CgsAc9QH6WbrS33Nlbp29RxWrM=
 			</data>
 		</dict>
 		<key>Headers/TWMnemonic.h</key>
@@ -584,7 +654,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			au7PqcX1ZX9X+J106543FKYvyfzqE88BPYFc7egZZUs=
+			rdygTmOyan05m0kerfgywqHSTV8xOCGT3XZGrkellvg=
 			</data>
 		</dict>
 		<key>Headers/TWPrivateKeyType.h</key>
@@ -724,7 +794,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AzGPGKKQWXKMXQOA6o2cL45Kd0+o8PfU1efTaUMwFtE=
+			8NudfmZYj7I637lGnnlm0siVWVPlRQLAgZILgAMeBZw=
 			</data>
 		</dict>
 		<key>Headers/TWTronMessageSigner.h</key>
@@ -732,6 +802,13 @@
 			<key>hash2</key>
 			<data>
 			8tHeA2qPNVogNn+ByVHo49P0UEbWFpN25WV5CvB896o=
+			</data>
+		</dict>
+		<key>Headers/TWWebAuthn.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6QhkoT84HHWENrI5isTviebRgGTdMPyEn4LR0Jo1Dfg=
 			</data>
 		</dict>
 		<key>Headers/WalletCore-Swift.h</key>
@@ -745,77 +822,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zmAJSpT48ewwsKMA4xUKA4GPHB1xw+2O6UFMWw6D94Q=
+			YqCDCVZI/F+Kqc6PL+qbt18Um72jkzPU9WU6p7GsLSk=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+NvucwdXN45oZzssbb9ZDVY1/nxlwtmuEekl5kx5yXQ=
+			kdT2CLVMQ5/eb8K+Xq8oCvNAya6ipU92ovg/xfSEW70=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OHJt5HWBzCj9nqHyNfCJvY+dCZHzTOsQ1+vdo+15Dd8=
+			adIzipDLPFaU7U0FNMDSre1Kq5uCybZ5BONO8OrUCf8=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			leY7trIgp8LQvlT81kr2witHM3WJfp0hTnCWJS8L5QE=
+			QFLC2uSzJ8M+9RMXoZGfpy21M15d2o/tTri2GIDsQ5g=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OHJt5HWBzCj9nqHyNfCJvY+dCZHzTOsQ1+vdo+15Dd8=
+			adIzipDLPFaU7U0FNMDSre1Kq5uCybZ5BONO8OrUCf8=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dYHiUVq/CuQ/GUIIfIEArsEid9TTyA4XHr/4HtYrpqM=
+			FT8DLN/m6JUj5w5z+UlfWQ1DJyxoTjE6MqdFjtUuolw=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+NvucwdXN45oZzssbb9ZDVY1/nxlwtmuEekl5kx5yXQ=
+			kdT2CLVMQ5/eb8K+Xq8oCvNAya6ipU92ovg/xfSEW70=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pUUxzX/80jye+xNdThXVFgWcgxYunMbqI0KXH/ERb0Y=
+			o7Cuh8ZXLCCBf4gmDZkD0u80VFSb1lzSiQ/IQ5+NCoU=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KI9pl9J/1e+Bazvroc0uZt8SrZluIa32pIDUAyjOBJo=
+			4PViBaynG7Yh34oM7oP9Q5ocAwFtJN9stLkoTe5o4mM=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pUUxzX/80jye+xNdThXVFgWcgxYunMbqI0KXH/ERb0Y=
+			o7Cuh8ZXLCCBf4gmDZkD0u80VFSb1lzSiQ/IQ5+NCoU=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x7gXWFhypBa2YWC7kF2f3Vm5M+1CU9nOkEYP7sPi4us=
+			9dO26e+MI+L1uJ7kyT+Y4Oh1PgOM9W2kPf20Mt5+3Do=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

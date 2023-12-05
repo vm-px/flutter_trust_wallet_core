@@ -9,6 +9,7 @@
 #include "TWBase.h"
 #include "TWBlockchain.h"
 #include "TWCurve.h"
+#include "TWDerivation.h"
 #include "TWHDVersion.h"
 #include "TWHRP.h"
 #include "TWPurpose.h"
@@ -39,6 +40,7 @@ enum TWCoinType {
     TWCoinTypeCallisto = 820,
     TWCoinTypeCardano = 1815, // Note: Cardano Shelley testnet uses purpose 1852 (not 44) 1852/1815
     TWCoinTypeCosmos = 118,
+    TWCoinTypePivx = 119,
     TWCoinTypeDash = 5,
     TWCoinTypeDecred = 42,
     TWCoinTypeDigiByte = 20,
@@ -93,12 +95,13 @@ enum TWCoinType {
     TWCoinTypeBandChain = 494,
     TWCoinTypeSmartChainLegacy = 10000714,
     TWCoinTypeSmartChain = 20000714,
+    TWCoinTypeTBinance = 30000714,
     TWCoinTypeOasis = 474,
     TWCoinTypePolygon = 966,
     TWCoinTypeTHORChain = 931,
     TWCoinTypeBluzelle = 483,
     TWCoinTypeOptimism = 10000070,
-    TWCoinTypeZksync = 10000280,
+    TWCoinTypeZksync = 10000324,
     TWCoinTypeArbitrum = 10042221,
     TWCoinTypeECOChain = 10000553,
     TWCoinTypeAvalancheCChain = 10009000,
@@ -109,11 +112,16 @@ enum TWCoinType {
     TWCoinTypeRonin = 10002020,
     TWCoinTypeOsmosis = 10000118,
     TWCoinTypeECash = 899,
+    TWCoinTypeIOST = 291,
     TWCoinTypeCronosChain = 10000025,
     TWCoinTypeSmartBitcoinCash = 10000145,
     TWCoinTypeKuCoinCommunityChain = 10000321,
+    TWCoinTypeBitcoinDiamond = 999,
     TWCoinTypeBoba = 10000288,
-    TWCoinTypeMetis = 1001088,
+    TWCoinTypeSyscoin = 57,
+    TWCoinTypeVerge = 77,
+    TWCoinTypeZen = 121,
+    TWCoinTypeMetis = 10001088,
     TWCoinTypeAurora = 1323161554,
     TWCoinTypeEvmos = 10009001,
     TWCoinTypeNativeEvmos = 20009001,
@@ -123,16 +131,53 @@ enum TWCoinType {
     TWCoinTypeKlaytn = 10008217,
     TWCoinTypeMeter = 18000,
     TWCoinTypeOKXChain = 996,
+    TWCoinTypeStratis = 105105,
+    TWCoinTypeKomodo = 141,
     TWCoinTypeNervos = 309,
     TWCoinTypeEverscale = 396,
     TWCoinTypeAptos = 637,
+    TWCoinTypeNebl = 146,
     TWCoinTypeHedera = 3030,
     TWCoinTypeSecret = 529,
     TWCoinTypeNativeInjective = 10000060,
     TWCoinTypeAgoric = 564,
     TWCoinTypeTON = 607,
     TWCoinTypeSui = 784,
-    TWCoinTypePolygonzkEVM = 10001422,
+    TWCoinTypeStargaze = 20000118,
+    TWCoinTypePolygonzkEVM = 10001101,
+    TWCoinTypeJuno = 30000118,
+    TWCoinTypeStride = 40000118,
+    TWCoinTypeAxelar = 50000118,
+    TWCoinTypeCrescent = 60000118,
+    TWCoinTypeKujira = 70000118,
+    TWCoinTypeIoTeXEVM = 10004689,
+    TWCoinTypeNativeCanto = 10007700,
+    TWCoinTypeComdex = 80000118,
+    TWCoinTypeNeutron = 90000118,
+    TWCoinTypeSommelier = 11000118,
+    TWCoinTypeFetchAI = 12000118,
+    TWCoinTypeMars = 13000118,
+    TWCoinTypeUmee = 14000118,
+    TWCoinTypeCoreum = 10000990,
+    TWCoinTypeQuasar = 15000118,
+    TWCoinTypePersistence = 16000118,
+    TWCoinTypeAkash = 17000118,
+    TWCoinTypeNoble = 18000118,
+    TWCoinTypeScroll = 534353,
+    TWCoinTypeRootstock = 137,
+    TWCoinTypeThetaFuel = 361,
+    TWCoinTypeConfluxeSpace = 1030,
+    TWCoinTypeAcala = 787,
+    TWCoinTypeAcalaEVM = 10000787,
+    TWCoinTypeOpBNB = 204,
+    TWCoinTypeNeon = 245022934,
+    TWCoinTypeBase = 8453,
+    TWCoinTypeSei = 19000118,
+    TWCoinTypeArbitrumNova = 10042170,
+    TWCoinTypeLinea = 59144,
+    TWCoinTypeGreenfield = 5600,
+    TWCoinTypeMantle = 5000,
+    TWCoinTypeZenEON = 7332,
 };
 
 /// Returns the blockchain for a coin type.
@@ -210,6 +255,12 @@ TWString* _Nonnull TWCoinTypeDeriveAddress(enum TWCoinType coin,
 TW_EXPORT_METHOD
 TWString* _Nonnull TWCoinTypeDeriveAddressFromPublicKey(enum TWCoinType coin,
                                                         struct TWPublicKey* _Nonnull publicKey);
+
+/// Derives the address for a particular coin from the public key with the derivation.
+TW_EXPORT_METHOD
+TWString* _Nonnull TWCoinTypeDeriveAddressFromPublicKeyAndDerivation(enum TWCoinType coin,
+                                                                     struct TWPublicKey* _Nonnull publicKey,
+                                                                     enum TWDerivation derivation);
 
 /// HRP for this coin type
 ///
