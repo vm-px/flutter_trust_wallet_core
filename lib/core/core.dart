@@ -3,6 +3,7 @@ export './any_signer.dart';
 export './base58.dart';
 export './bitcoin_address.dart';
 export './bitcoin_script.dart';
+export './coin.dart';
 export './coin_type_configuration.dart';
 export './ethereum_abi.dart';
 export './ethereum_abi_function.dart';
