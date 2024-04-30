@@ -1,8 +1,6 @@
-// Copyright © 2017-2021 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 //
 // This is a GENERATED FILE from \registry.json, changes made here WILL BE LOST.
 //
@@ -24,7 +22,8 @@ enum TWDerivation {
     TWDerivationBitcoinTestnetSegwit = 5,
     TWDerivationBitcoinTestnetLegacy = 6,
     TWDerivationLitecoinLegacy = 7,
-    TWDerivationSolanaSolana = 8,
+    TWDerivationLitecoinTestnetLegacy = 8,
+    TWDerivationSolanaSolana = 9,
 };
 
 TW_EXTERN_C_END

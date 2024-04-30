@@ -1,8 +1,6 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #pragma once
 
@@ -103,6 +101,9 @@ TWData *_Nonnull TWHashBlake2b(TWData *_Nonnull data, size_t size);
 ///
 /// \param data Non-null block of data
 /// \return Non-null computed Groestl512 block of data
+TW_EXPORT_STATIC_METHOD
+TWData *_Nonnull TWHashBlake2bPersonal(TWData *_Nonnull data, TWData * _Nonnull personal, size_t outlen);
+
 TW_EXPORT_STATIC_METHOD
 TWData *_Nonnull TWHashGroestl512(TWData *_Nonnull data);
 
