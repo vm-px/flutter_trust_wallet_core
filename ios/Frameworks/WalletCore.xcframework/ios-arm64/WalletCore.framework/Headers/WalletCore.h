@@ -1,8 +1,6 @@
-// Copyright © 2017-2020 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #import <Foundation/Foundation.h>
 
@@ -22,10 +20,13 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWAESPaddingMode.h"
 #include "TWAccount.h"
 #include "TWAnyAddress.h"
+#include "TWAsnParser.h"
+#include "TWBarz.h"
 #include "TWBase32.h"
 #include "TWBase58.h"
 #include "TWBase64.h"
 #include "TWBitcoinAddress.h"
+#include "TWBitcoinFee.h"
 #include "TWBitcoinMessageSigner.h"
 #include "TWBitcoinScript.h"
 #include "TWBitcoinSigHashType.h"
@@ -44,12 +45,17 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWEthereumAbiValue.h"
 #include "TWEthereumChainID.h"
 #include "TWEthereumMessageSigner.h"
+#include "TWEthereumRlp.h"
 #include "TWFIOAccount.h"
+#include "TWFilecoinAddressConverter.h"
+#include "TWFilecoinAddressType.h"
+#include "TWFiroAddressType.h"
 #include "TWGroestlcoinAddress.h"
 #include "TWHDVersion.h"
 #include "TWHDWallet.h"
 #include "TWHRP.h"
 #include "TWHash.h"
+#include "TWLiquidStaking.h"
 #include "TWMnemonic.h"
 #include "TWNEARAccount.h"
 #include "TWNervosAddress.h"
@@ -63,6 +69,7 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWSS58AddressType.h"
 #include "TWSegwitAddress.h"
 #include "TWSolanaAddress.h"
+#include "TWSolanaTransaction.h"
 #include "TWStarkExMessageSigner.h"
 #include "TWStarkWare.h"
 #include "TWStellarMemoType.h"
@@ -74,4 +81,7 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWTHORChainSwap.h"
 #include "TWTezosMessageSigner.h"
 #include "TWTransactionCompiler.h"
+#include "TWTransactionDecoder.h"
 #include "TWTronMessageSigner.h"
+#include "TWWalletConnectRequest.h"
+#include "TWWebAuthn.h"

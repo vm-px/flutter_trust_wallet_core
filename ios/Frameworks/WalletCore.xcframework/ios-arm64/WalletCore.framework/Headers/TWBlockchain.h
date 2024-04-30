@@ -1,8 +1,6 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #pragma once
 
@@ -40,6 +38,7 @@ enum TWBlockchain {
     TWBlockchainHarmony = 25,
     TWBlockchainNEAR = 26,
     TWBlockchainAlgorand = 27,
+    TWBlockchainIOST = 28,
     TWBlockchainPolkadot = 29,
     TWBlockchainCardano = 30,
     TWBlockchainNEO = 31,
@@ -52,12 +51,20 @@ enum TWBlockchain {
     TWBlockchainThorchain = 38, // Cosmos
     TWBlockchainRonin = 39, // Ethereum
     TWBlockchainKusama = 40, // Polkadot
-    TWBlockchainNervos = 41,
-    TWBlockchainEverscale = 42,
-    TWBlockchainAptos = 43, // Aptos
-    TWBlockchainHedera = 44, // Hedera
-    TWBlockchainTheOpenNetwork = 45,
-    TWBlockchainSui = 46,
+    TWBlockchainZen = 41, // Bitcoin
+    TWBlockchainBitcoinDiamond = 42, // Bitcoin
+    TWBlockchainVerge = 43, // Bitcoin
+    TWBlockchainNervos = 44,
+    TWBlockchainEverscale = 45,
+    TWBlockchainAptos = 46, // Aptos
+    TWBlockchainNebl = 47, // Bitcoin
+    TWBlockchainHedera = 48, // Hedera
+    TWBlockchainTheOpenNetwork = 49,
+    TWBlockchainSui = 50,
+    TWBlockchainGreenfield = 51,
+    TWBlockchainInternetComputer = 52,
+    TWBlockchainNativeEvmos = 53, // Cosmos
+    TWBlockchainNativeInjective = 54, // Cosmos
 };
 
 TW_EXTERN_C_END

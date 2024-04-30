@@ -1,14 +1,14 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #pragma once
 
 #include "TWBase.h"
 #include "TWCoinType.h"
 #include "TWData.h"
+#include "TWFilecoinAddressType.h"
+#include "TWFiroAddressType.h"
 #include "TWString.h"
 
 TW_EXTERN_C_BEGIN
@@ -114,6 +114,22 @@ struct TWAnyAddress* _Nonnull TWAnyAddressCreateBech32WithPublicKey(struct TWPub
 /// \return TWAnyAddress pointer or nullptr if public key is invalid.
 TW_EXPORT_STATIC_METHOD
 struct TWAnyAddress* _Nonnull TWAnyAddressCreateSS58WithPublicKey(struct TWPublicKey* _Nonnull publicKey, enum TWCoinType coin, uint32_t ss58Prefix);
+
+/// Creates a Filecoin address from a public key and a given address type.
+///
+/// \param publicKey derivates the address from the public key.
+/// \param filecoinAddressType Filecoin address type.
+/// \return TWAnyAddress pointer or nullptr if public key is invalid.
+TW_EXPORT_STATIC_METHOD
+struct TWAnyAddress* _Nonnull TWAnyAddressCreateWithPublicKeyFilecoinAddressType(struct TWPublicKey* _Nonnull publicKey, enum TWFilecoinAddressType filecoinAddressType);
+
+/// Creates a Firo address from a public key and a given address type.
+///
+/// \param publicKey derivates the address from the public key.
+/// \param firoAddressType Firo address type.
+/// \return TWAnyAddress pointer or nullptr if public key is invalid.
+TW_EXPORT_STATIC_METHOD
+struct TWAnyAddress* _Nonnull TWAnyAddressCreateWithPublicKeyFiroAddressType(struct TWPublicKey* _Nonnull publicKey, enum TWFiroAddressType firoAddressType);
 
 /// Deletes an address.
 ///
