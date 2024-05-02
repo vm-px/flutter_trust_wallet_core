@@ -30,6 +30,7 @@ class TWCoinType {
   static const int TWCoinTypeKava = 459;
   static const int TWCoinTypeKin = 2017;
   static const int TWCoinTypeLitecoin = 2;
+  static const int TWCoinTypeLitecoinTestnet = 4;
   static const int TWCoinTypeMonacoin = 22;
   static const int TWCoinTypeNebulas = 2718;
   static const int TWCoinTypeNULS = 8964;
