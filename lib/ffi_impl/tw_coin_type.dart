@@ -410,6 +410,23 @@ class TWCoinType {
   late final _dart_TWCoinTypeSlip44Id _TWCoinTypeSlip44Id =
       _TWCoinTypeSlip44Id_ptr.asFunction<_dart_TWCoinTypeSlip44Id>();
 
+  /// SS58Prefix for this coin type
+  ///
+  /// \param coin A coin type
+  /// \return SS58Prefix for the given coin type
+  int TWCoinTypeSS58Prefix(
+    int coin,
+  ) {
+    return _TWCoinTypeSS58Prefix(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeSS58Prefix_ptr =
+      lookup<NativeFunction<Int32 Function(Int32)>>('TWCoinTypeSS58Prefix');
+  late final int Function(int) _TWCoinTypeSS58Prefix =
+      _TWCoinTypeSS58Prefix_ptr.asFunction<_dart_TWCoinTypeSS58Prefix>();
+
   /// public key type for this coin type
   ///
   /// \param coin A coin type
@@ -495,6 +512,10 @@ typedef _dart_TWCoinTypeChainId = Pointer<Utf8> Function(
 );
 
 typedef _dart_TWCoinTypeSlip44Id = int Function(
+  int coin,
+);
+
+typedef _dart_TWCoinTypeSS58Prefix = int Function(
   int coin,
 );
 

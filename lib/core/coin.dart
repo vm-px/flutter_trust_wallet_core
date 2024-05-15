@@ -12,4 +12,6 @@ class Coin {
 
     return address;
   }
+
+  int ss58Prefix(int coin) => TWCoinType().TWCoinTypeSS58Prefix(coin);
 }
