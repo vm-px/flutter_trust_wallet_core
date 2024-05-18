@@ -63,6 +63,7 @@ class TWCoinType {
   static const int TWCoinTypeAlgorand = 283;
   static const int TWCoinTypeKusama = 434;
   static const int TWCoinTypePolkadot = 354;
+  static const int TWCoinTypePolkadotWestend = 355;
   static const int TWCoinTypeFilecoin = 461;
   static const int TWCoinTypeElrond = 508;
   static const int TWCoinTypeBandChain = 494;
