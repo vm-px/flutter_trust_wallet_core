@@ -3232,6 +3232,7 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case algorand
   case kusama
   case polkadot
+  case polkadotWestend
   case filecoin
   case multiversX
   case bandChain
