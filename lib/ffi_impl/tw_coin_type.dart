@@ -100,6 +100,7 @@ class TWCoinType {
   static const int TWCoinTypeOKXChain = 996;
   static const int TWCoinTypeNervos = 309;
   static const int TWCoinTypeEverscale = 396;
+  static const int TWCoinTypeTon = 607;
 
   /// Returns the blockchain for a coin type.
   ///
