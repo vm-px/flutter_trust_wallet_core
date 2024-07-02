@@ -1,4 +1,3 @@
-import '../dart_impl/tw_wallet_connect_request_impl.dart';
 import './core_imports.dart';
 
 class WalletConnectRequest {

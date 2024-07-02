@@ -18,7 +18,7 @@ class TWWalletConnectRequest {
 
   static final _TWWalletConnectRequestParse_ptr =
       lookup<NativeFunction<Pointer<Void> Function(Int32, Pointer<Void>)>>(
-    '_dart_TWWalletConnectRequestParse',
+    'TWWalletConnectRequestParse',
   );
 
   static final _dart_TWWalletConnectRequestParse _TWWalletConnectRequestParse =
