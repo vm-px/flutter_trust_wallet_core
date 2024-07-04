@@ -22,3 +22,4 @@ export './tw_segwit_address_impl.dart';
 export './tw_solana_address_impl.dart';
 export './tw_stored_key_impl.dart';
 export './tw_string_impl.dart';
+export './tw_wallet_connect_request_impl.dart';
