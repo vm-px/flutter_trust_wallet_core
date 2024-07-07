@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WalletCore
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name WalletCore
 import Foundation
 import Swift
 import SwiftProtobuf
@@ -3331,6 +3330,7 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case lightlink
   case blast
   case bounceBit
+  case zkLinkNova
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.CoinType]
   public typealias RawValue = Swift.UInt32
@@ -5780,6 +5780,7 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   case linea
   case blast
   case scroll
+  case zklinknova
   case wanchain
   case cronos
   case optimism
@@ -12336,6 +12337,7 @@ public enum StellarVersionByte : Swift.UInt16, Swift.CaseIterable {
   final public func wallet(password: Foundation.Data) -> WalletCore.HDWallet?
   final public func exportJSON() -> Foundation.Data?
   final public func fixAddresses(password: Foundation.Data) -> Swift.Bool
+  final public func updateAddress(password: Foundation.Data, coin: WalletCore.CoinType) -> Swift.Bool
 }
 public enum StoredKeyEncryption : Swift.UInt32, Swift.CaseIterable {
   case aes128Ctr
@@ -12895,6 +12897,12 @@ extension WalletCore.TW_THORChainSwap_Proto_SwapOutput : SwiftProtobuf.Message, 
 }
 public struct THORChainSwap {
   public static func buildSwap(input: Foundation.Data) -> Foundation.Data
+}
+@_hasMissingDesignatedInitializers final public class TONAddressConverter {
+  public static func toBoc(address: Swift.String) -> Swift.String?
+  public static func fromBoc(boc: Swift.String) -> Swift.String?
+  public static func toUserFriendly(address: Swift.String, bounceable: Swift.Bool, testnet: Swift.Bool) -> Swift.String?
+  @objc deinit
 }
 public func CardanoMinAdaAmount(tokenBundle: Foundation.Data) -> Swift.UInt64
 public func TWDataCreateWithNSData(_ data: Foundation.Data) -> Swift.UnsafeRawPointer
