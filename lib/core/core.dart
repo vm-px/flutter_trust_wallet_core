@@ -22,4 +22,5 @@ export './ripple_x_address.dart';
 export './segwit_address.dart';
 export './solana_address.dart';
 export './stored_key.dart';
+export './ton_address_converter.dart';
 export './wallet_connect_request.dart';

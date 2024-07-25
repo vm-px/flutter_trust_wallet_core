@@ -49,5 +49,6 @@ export './tw_stored_key.dart';
 export './tw_stored_key_encryption_level.dart';
 export './tw_string.dart';
 export './tw_thor_chain_swap.dart';
+export './tw_ton_address_converter.dart';
 export './tw_transaction_compiler.dart';
 export './tw_wallet_connect_request.dart';
